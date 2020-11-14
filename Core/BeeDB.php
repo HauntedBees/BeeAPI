@@ -90,6 +90,11 @@ class BeeDB {
         $cmd->execute($params);
         return $cmd->fetchAll(PDO::FETCH_CLASS, $objClass);
     }
+    public function GetString(string $sql, array $params = []):?string {
+		$cmd = $this->pdo->prepare($sql);
+        $cmd->execute($params);
+        return $cmd->fetch(PDO::FETCH_NUM)[0];
+    }
     public function GetStrings(string $sql, array $params = []):array {
 		$cmd = $this->pdo->prepare($sql);
         $cmd->execute($params);

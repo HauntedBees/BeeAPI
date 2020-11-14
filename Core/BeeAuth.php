@@ -46,6 +46,15 @@ class BeeAuth {
         }
         return new BeeUserToken(intval($userInfo["id"]), intval($userInfo["rolebits"]));
     }
+    public function ResetPassword(int $userID, BeePasswordChange $pwd) {
+        $db = new BeeDB("auth");
+        $oldPassword = $db->GetString("SELECT password FROM users WHERE id = :i", ["i" => $userID]);
+        if($oldPassword === null || $oldPassword === "") { throw new BeeAuthException("User $userID not found."); }
+        if(!password_verify($pwd->oldPassword, $oldPassword)) { throw new BeeAuthException("Incorrect password."); }
+        $newPassword = password_hash($pwd->newPassword, PASSWORD_BCRYPT);
+        $db->ExecuteNonQuery("UPDATE users SET password = :p WHERE id = :i", ["i" => $userID, "p" => $newPassword]);
+    }
+
     public function GetToken(string $type, string $token = ""):BeeToken {
         $auth = $token === "" ? $this->GetAuthHeader() : "Bearer $token";
         if($auth === "") { throw new Exception("No auth header."); }

@@ -61,4 +61,8 @@ class BeeLookup {
     public int $id;
     public string $name;
 }
+class BeePasswordChange {
+    public string $oldPassword;
+    public string $newPassword;
+}
 ?>
