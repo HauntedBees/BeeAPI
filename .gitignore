@@ -1,3 +1,5 @@
 Oauth/vendor
 config.ini
 composer.lock
+bigData.json
+web.config
