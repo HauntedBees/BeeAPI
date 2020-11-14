@@ -1,0 +1,3 @@
+[submodule "Questions"]
+	path = Questions
+	url = https://github.com/HauntedBees/BeeQuestions.API
