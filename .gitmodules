@@ -1,3 +1,6 @@
 [submodule "Questions"]
 	path = Questions
 	url = https://github.com/HauntedBees/BeeQuestions.API
+[submodule "Sonic"]
+	path = Sonic
+	url = https://github.com/HauntedBees/Sonic.API
