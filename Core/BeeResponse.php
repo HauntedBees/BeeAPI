@@ -21,6 +21,7 @@
  * @see https://github.com/HauntedBees/BeeAPI
  */
 class BeeResponse {
+	public bool $addSessionExpiredMessage = false;
 	public function __construct() {
 		$origin = $_SERVER["HTTP_ORIGIN"];
 		header("Access-Control-Allow-Origin: $origin");
@@ -29,7 +30,12 @@ class BeeResponse {
 		header("Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS");
 		header("Content-Type: application/json");
     }
-    private function Response($data):void { echo json_encode($data); }
+    private function Response($data):void {
+		if($this->addSessionExpiredMessage) { 
+			$data["sessionexpired"] = true;
+		}
+		echo json_encode($data);
+	}
 
 	public function OK($data):void {
 		header("HTTP/1.0 200 OK", true, 200);

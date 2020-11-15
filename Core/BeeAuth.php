@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+class BeeSessionExpiredException extends Exception {}
 class BeeAuthException extends Exception {}
 class BeeAuth {
     private string $secret;
@@ -62,7 +63,7 @@ class BeeAuth {
             $token = $matches[1];
             $resp = $this->ValidateJWTToken($type, $token);
             if(!$resp->valid) { throw new Exception("Invalid auth header."); }
-            if(!$resp->expired) { throw new Exception("Expired auth header."); }
+            if($resp->expired) { throw new BeeSessionExpiredException("Expired auth header."); }
             return $resp->token;
         } else { throw new Exception("No auth bearer."); }
     }
@@ -98,7 +99,7 @@ class BeeAuth {
         $token = AssArrayToObject($tokenClassName, $payloadObj, false);
         $response = new BeeParsedToken($token);
         $response->valid = ($base64UrlSignature === $signatureProvided);
-        $response->expired = ((time() - $payloadObj->created) > 28800); // 8 hours
+        $response->expired = ((time() - $token->created) > 28800); // 8 hours
         return $response;
     }
 }

@@ -50,7 +50,6 @@ class BeeParsedToken {
 class BeeUserToken extends BeeToken {
     public int $id;
     public int $role;
-    public ?array $misc;
     public function __construct(int $id, int $role) {
         parent::__construct();
         $this->id = $id;
