@@ -55,15 +55,11 @@ try {
     if($requestType === "POST") {
         $methodName = "Post".$methodName;
         $args = [json_decode(file_get_contents("php://input"), true)];
-    } else if($requestType === "GET") {
-        $methodName = "Get".$methodName;
+    } else if($requestType === "GET" || $requestType === "DELETE") {
+        $methodName = ($requestType === "DELETE" ? "Delete" : "Get").$methodName;
         if(!empty($_GET["param"])) {
-            $args = json_decode($_GET["param"]);
-        }
-    } else if($requestType === "DELETE") {
-        $methodName = "Delete".$methodName;
-        if(!empty($_GET["param"])) {
-            $args = json_decode($_GET["param"]);
+            $param = str_replace('/"', '\"', $_GET["param"]);
+            $args = json_decode($param);
         }
     } else { throw new Exception("Unsupported request method."); }
 
