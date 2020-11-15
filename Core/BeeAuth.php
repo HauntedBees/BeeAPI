@@ -4,7 +4,7 @@ class BeeAuthException extends Exception {}
 class BeeAuth {
     private string $secret;
     public function __construct() {
-        $ini = parse_ini_file("config.ini", true);
+        $ini = parse_ini_file(CONFIG_PATH, true);
         $this->secret = $ini["auth"]["secret"];
     }
     public function Register(BeeCredentials $creds):BeeUserToken {

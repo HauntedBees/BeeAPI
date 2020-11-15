@@ -37,7 +37,7 @@ class BeeController {
 		}
 	}
 	protected function GetConfigInfo(string $group, string $key):string {
-        $ini = parse_ini_file("config.ini", true);
+        $ini = parse_ini_file(CONFIG_PATH, true);
         return $ini[$group][$key];
 	}
 }

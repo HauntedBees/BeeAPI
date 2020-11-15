@@ -32,7 +32,7 @@ RewriteEngine On
 RewriteRule ^API/([^/]*)/([^/]*)/(.*)$ /API.php?controller=$1&method=$2&param=$3 [L]
 ```
 
-A `config.ini` file should be created with the same structure as `example_config.ini`. It is recommended that this be placed in a secure location and not at the root of the directory in a production environment, in which case the references in the code should be updated.
+A `config.ini` file should be created with the same structure as `example_config.ini`. It is recommended that this be placed in a secure location and not at the root of the directory in a production environment, in which case the `CONFIG_PATH` value in **API.php** should be updated.
 
 **BeeAPI** is meant to be modular, and new directories containing Controllers and helper files can be dropped into the root directory; the following conditions should be met:
 -  a `Module.php` file should be present in the root of the directory which includes required files.

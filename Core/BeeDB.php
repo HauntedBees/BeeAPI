@@ -25,7 +25,7 @@ class BeeDB {
 
 	public function __construct($db) {
         if($db === "") { return; }
-        $ini = parse_ini_file("config.ini", true);
+        $ini = parse_ini_file(CONFIG_PATH, true);
         $creds = $ini["db_$db"];
         $this->pdo = new PDO($creds["dsn"], $creds["username"], $creds["password"]);
 		$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

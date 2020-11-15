@@ -24,7 +24,7 @@ require "vendor/autoload.php";
 use Abraham\TwitterOAuth\TwitterOAuth;
 class OauthTwitterHandler {
     public function MakeRequest(string $callbackURL):void {
-        $ini = parse_ini_file("config.ini", true);
+        $ini = parse_ini_file(CONFIG_PATH, true);
         $creds = $ini["twitter"];
         $connection = new TwitterOAuth($creds["apikey"], $creds["apisecret"]);
         $request_token = $connection->oauth("oauth/request_token", ["oauth_callback" => $callbackURL]);
@@ -40,7 +40,7 @@ class OauthTwitterHandler {
         header("Location: $url");
     }
     public function Validate(string $token, string $secret, string $verifier):BeeOAuthAccountInfo {
-        $ini = parse_ini_file("config.ini", true);
+        $ini = parse_ini_file(CONFIG_PATH, true);
         $creds = $ini["twitter"];
         $connection = new TwitterOAuth($creds["apikey"], $creds["apisecret"], $token, $secret);
         $tokenInfo = $connection->oauth("oauth/access_token", ["oauth_verifier" => $verifier]);
