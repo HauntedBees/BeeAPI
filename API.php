@@ -20,7 +20,7 @@
  * 
  * @see https://github.com/HauntedBees/BeeAPI
  */
-const CONFIG_PATH = "config.ini";
+const CONFIG_PATH = "../../protected/config.ini";
 function AssArrayToObject(string $className, array $arr, bool $callConstructor = true) {
     $class = new ReflectionClass($className);
     $obj = ($callConstructor ? $class->newInstance() : $class->newInstanceWithoutConstructor());
@@ -76,7 +76,7 @@ try {
 } catch(BeeException $e) {
     $r = new BeeResponse();
     $r->Error($e->getMessage());
-/*} catch(ReflectionException $e) {
+} catch(ReflectionException $e) {
     $r = new BeeResponse();
     $r->Error("Invalid request.");
 } catch(TypeError $e) {
@@ -84,9 +84,10 @@ try {
     $r->Error("Invalid request format.");
 } catch(ArgumentCountError $e) {
     $r = new BeeResponse();
-    $r->Error("Invalid parameter count.");*/
+    $r->Error("Invalid parameter count.");
 } catch(Throwable $e) {
     $r = new BeeResponse();
-    $r->Error(get_class($e)."/".$e->getMessage());
+    $r->Error($e->getMessage());
+    //$r->Error(get_class($e)."/".$e->getMessage());
 }
 ?>
