@@ -65,7 +65,7 @@ try {
 
     $method = new ReflectionMethod($controller, $methodName);
     foreach($args as $idx=>&$arg) {
-        $isObject = is_array($arg) && array_keys($arg) !== range(0, count($arg) - 1);
+        $isObject = is_array($arg) && count($arg) > 0 && array_keys($arg) !== range(0, count($arg) - 1);
         if($isObject) {
             $param = new ReflectionParameter([$controllerName, $methodName], $idx);
             $paramClassName = $param->getClass()->name;
