@@ -1,0 +1,1079 @@
+{
+	"ab|kystybyi": {
+		"name": "Kystybyi", "servings": "4", "servingUnit": "servings",
+		"author": "Spicing Your Life", "source": "https://www.spicingyourlife.com/2016/09/qistibi-flatbread-stuffed-with-potatoes.html",
+		"prepTime": "30m", "cookTime": "5m", "totalTime": "35m",
+		"notes": "",
+		"tags": ["A", "Abkhazia"],
+		"ingredience": [
+			{ "group": "Dough", "amount": "1", "unit": "cup", "ingredient": "all-purpose flour" },
+			{ "group": "Dough", "amount": "1/4", "unit": "cup", "ingredient": "milk, more as needed" },
+			{ "group": "Dough", "amount": "1/4", "unit": "tsp", "ingredient": "baking soda" },
+			{ "group": "Dough", "amount": "", "unit": "none", "ingredient": "salt, to taste" },
+			{ "group": "Filling", "amount": "1/2", "unit": "cup", "ingredient": "potatoes, boiled and mashed" },
+			{ "group": "Filling", "amount": "", "unit": "none", "ingredient": "few drops of milk" },
+			{ "group": "Filling", "amount": "", "unit": "none", "ingredient": "grated onions" },
+			{ "group": "Filling", "amount": "", "unit": "none", "ingredient": "salt, to taste" },
+			{ "group": "Filling", "amount": "2", "unit": "tsp", "ingredient": "butter" }
+		],
+		"steps": [
+			"Combine the dough ingredients and knead until a soft dough forms.",
+			"Let rest for 30 minutes, then divide into small balls and flatten them into thin tortillas of [6\"] diameter.",
+			"Mash the filling ingredients together.",
+			"Heat a nonstick pan and cook the dough on both sides.",
+			"Remove the tortillas; take a spoonful of the filling and spread it onto half of them. Fold the other half over and press down.",
+			"Heat the pan again with butter and fry the folded tortillas until crispy on both sides."
+		],
+		"important": false, "date": 1580957053107, "val": "Kystybyi"
+	},
+	"ab|ajika": {
+		"name": "Red Ajika", "servings": "3", "servingUnit": "cups",
+		"author": "Kat Craddock", "source": "https://www.saveur.com/red-ajika-recipe/",
+		"prepTime": "20m", "cookTime": "0m", "totalTime": "20m",
+		"notes": "",
+		"tags": ["A", "Abkhazia"],
+		"ingredience": [
+			{ "amount": "1", "unit": "lb", "ingredient": "tomatoes, seeded and peeled" },
+			{ "amount": "8", "unit": "oz", "ingredient": "red bell pepper" },
+			{ "amount": "4", "unit": "oz", "ingredient": "medium-hot red chillies" },
+			{ "amount": "1.5", "unit": "oz", "ingredient": "garlic cloves" },
+			{ "amount": "1", "unit": "tbsp", "ingredient": "dried marigold petals" },
+			{ "amount": "1/2", "unit": "tsp", "ingredient": "ground blue fenugreek" },
+			{ "amount": "2", "unit": "tsp", "ingredient": "coriander seeds, crushed" },
+			{ "amount": "2", "unit": "tsp", "ingredient": "kosher salt" }
+		],
+		"steps": [ "Blend everything together in a food processor until a thick salsa is made." ],
+		"important": false, "date": 1580958749431, "val": "Red Ajika"
+	},
+	"af|mantu": {
+		"name": "Mantu", "servings": "4", "servingUnit": "servings",
+		"author": "Afghan Kitchen Recipes", "source": "http://www.afghankitchenrecipes.com/recipe/mantu-beef-dumplings/",
+		"prepTime": "35m", "cookTime": "40m", "totalTime": "9h15m",
+		"notes": "",
+		"tags": [],
+		"ingredience": [
+			{ "group": "Filling", "amount": "2", "unit": "cup", "ingredient": "onion, diced" },
+			{ "group": "Filling", "amount": "1", "unit": "lb", "ingredient": "ground beef/lamb" },
+			{ "group": "Filling", "amount": "1/2", "unit": "tsp", "ingredient": "garlic" },
+			{ "group": "Filling", "amount": "2", "unit": "tsp", "ingredient": "ground coriander seed" },
+			{ "group": "Filling", "amount": "1/2", "unit": "tsp", "ingredient": "salt" },
+			{ "group": "Filling", "amount": "1/2", "unit": "tsp", "ingredient": "black pepper" },
+			{ "group": "Topping", "amount": "1", "unit": "cup", "ingredient": "chana lentils" },
+			{ "group": "Topping", "amount": "1/2", "unit": "lb", "ingredient": "ground beef/lamb" },
+			{ "group": "Topping", "amount": "1", "unit": "", "ingredient": "medium onion, finely chopped" },
+			{ "group": "Topping", "amount": "1/2", "unit": "tsp", "ingredient": "garlic" },
+			{ "group": "Topping", "amount": "1/2", "unit": "tsp", "ingredient": "salt" },
+			{ "group": "Topping", "amount": "1/2", "unit": "tsp", "ingredient": "black pepper" },
+			{ "group": "Topping", "amount": "2", "unit": "tsp", "ingredient": "tomato paste" },
+			{ "group": "Topping", "amount": "30", "unit": "mL", "ingredient": "cooking oil" },
+			{ "group": "Yoghurt Dip", "amount": "1", "unit": "tsp", "ingredient": "dried mint" },
+			{ "group": "Yoghurt Dip", "amount": "1/2", "unit": "tsp", "ingredient": "garlic" },
+			{ "group": "Yoghurt Dip", "amount": "1/2", "unit": "tsp", "ingredient": "salt" },
+			{ "group": "Yoghurt Dip", "amount": "500", "unit": "mL", "ingredient": "plain yoghurt" },
+			{ "group": "Dough", "amount": "", "unit": "none", "ingredient": "flour, as needed" },
+			{ "group": "Dough", "amount": "", "unit": "none", "ingredient": "water, as needed" }
+		],
+		"steps": [
+			"To make the filling, heat a pan over medium heat and add everything but the pepper to it, cooking for 15-20 minutes until the meat is approximately half cooked.",
+			"Add the black pepper and onions to the mixture and remove from heat, letting cool to room temperature.",
+			"To make the topping, first soak the lentils for 2–3 hours or overnight.",
+			"Heat oil in a frying pan and cook the onions and garlic until they're lightly browned.",
+			"Add the tomato, tomato paste, lentils, and [3/4 cup] water. Cook until soft for 30–45 minutes.",
+			"Take off heat and add salt and pepper. Let cool to room temperature.",
+			"For the dip, combine the ingredients mix to combine.",
+			"For the dough, gradually add water to the flour, mixing until a cohesive dough forms, then let it settle for 15-20 minutes until firm.",
+			"Break the dough apart and form small balls, then roll them into flat [1/16 inch] circles on a floured surface or using a pasta machine.",
+			"Place around [1tbsp] of the filling in each circle, then moisten the edges with water and fold in half to enclose them, pressing to seal.",
+			"Boil water and set up a steamer dish. Lightly oil it, then place the dumplings on it and steam them, covered, for 40 minutes.",
+			"Add a layer of the yoghurt mix to a plate, then place the dumplings on top. Cover with more yoghurt mix and the topping.",
+			"Garnish with pinch of cayenne pepper and dried mint."
+		],
+		"important": false, "date": 1580959050167, "val": "Mantu"
+	},
+	"al|fergese": {
+		"name": "Fergesë e Tiranës me Piperka", "servings": "2", "servingUnit": "servings",
+		"author": "My Albanian Food", "source": "https://www.myalbanianfood.com/recipe/albanian-fergese-e-tiranes-me-piperka/",
+		"prepTime": "30m", "cookTime": "30m", "totalTime": "1hr",
+		"notes": "",
+		"tags": ["A", "Albania"],
+		"ingredience": [
+			{ "amount": "5", "unit": "", "ingredient": "bell peppers, roasted & diced" },
+			{ "amount": "1", "unit": "", "ingredient": "onion, diced" },
+			{ "amount": "150", "unit": "g", "ingredient": "feta cheese, crumbled" },
+			{ "amount": "400", "unit": "g", "ingredient": "diced tomatoes" },
+			{ "amount": "1", "unit": "tsp", "ingredient": "chili flakes" },
+			{ "amount": "20", "unit": "g", "ingredient": "flour" },
+			{ "amount": "40", "unit": "g", "ingredient": "Greek yoghurt" },
+			{ "amount": "2", "unit": "tbsp", "ingredient": "basil" },
+			{ "amount": "", "unit": "toTaste", "ingredient": "pepper" },
+			{ "amount": "", "unit": "toTaste", "ingredient": "salt" },
+			{ "amount": "", "unit": "none", "ingredient": "olive oil" }
+		],
+		"steps": [
+			"Cook the onion in olive oil for about 3 minutes until it softens, then set aside.",
+			"Simmer the peppers, basil, and tomatoes on medium-high heat for 10 minutes until only a little liquid remains. Add the onions back in and set aside.",
+			"Melt the butter and add flour to make a roux. Add in the feta cheese, stirring quickly, until a thick roux forms, then add the yoghurt.",
+			"Mix the roux into the pepper mixture, season with the chili flakes, salt, and pepper.",
+			"Pour the mixture into clay dishes (or ramekins) and cook on [180C] for 30 minutes. Cool slightly, then serve."
+		],
+		"important": false, "date": 1580961022577, "val": "Fergesë e Tiranës me Piperka"
+	},
+	"al|flija": {
+		"name": "Flija", "servings": "12", "servingUnit": "slices",
+		"author": "My Albanian Food", "source": "https://www.myalbanianfood.com/recipe/albanian-flija-pancake/",
+		"prepTime": "15m", "cookTime": "2h", "totalTime": "2h15m",
+		"notes": "",
+		"tags": ["A", "Albania"],
+		"ingredience": [
+			{ "group": "Flour Batter", "amount": "1", "unit": "kg", "ingredient": "flour" },
+			{ "group": "Flour Batter", "amount": "1", "unit": "L", "ingredient": "water" },
+			{ "group": "Flour Batter", "amount": "1", "unit": "tsp", "ingredient": "salt" },
+			{ "group": "Batter Filling", "amount": "220", "unit": "g", "ingredient": "melted butter" },
+			{ "group": "Batter Filling", "amount": "200", "unit": "mL", "ingredient": "vegetable oil" },
+			{ "group": "Batter Filling 1", "amount": "5", "unit": "tbsp", "ingredient": "Greek yoghurt" },
+			{ "group": "Batter Filling 2", "amount": "3", "unit": "tbsp", "ingredient": "clotted cream" },
+			{ "group": "Batter Filling 3", "amount": "500", "unit": "mL", "ingredient": "sour cream" }
+		],
+		"steps": [
+			"Mix together the flour batter ingredients, ensuring no lumps remain. The batter should be thick but pourable.",
+			"Mix together the filling ingredients, then let it rest for 10 minutes before stirring again.",
+			"Set your oven to the low broiler setting and grease a baking tray or pie pan.",
+			"Using a ladle, spread a thin layer of flour batter into the pan in a sort of star shape, leaving triangles of the pan unbattered.",
+			"Broil until golden brown, for 3-5 minutes.",
+			"Remove from the broiler and fill the entire pan with a thin layer of filling, covering both the battered and unbattered areas.",
+			"Add another thin layer of the batter in a star shape, this time covering the areas that were not covered previously.",
+			"Add back to the broiler for another 3-5 minutes.",
+			"Repeat this process until all the mixture has been used up, which should take around 2 hours. Every few layers, use the batter to fill up any gaps that have formed.",
+			"Serve with yoghurt or honey."
+		],
+		"important": false, "date": 1580961296151, "val": "Flija"
+	},
+	"sv|nuegados": {
+		"name": "Nuégados de Yuca", "servings": "25", "servingUnit": "nuégados",
+		"author": "Vera Abitbol", "source": "https://www.196flavors.com/salvador-nuegados-de-yuca/",
+		"prepTime": "10m", "cookTime": "30m", "totalTime": "40m",
+		"notes": "",
+		"tags": ["E", "El Salvador"],
+		"ingredience": [
+			{ "group": "Nuégados", "amount": "1", "unit": "lb", "ingredient": "cassava, peeled, rinsed and ground very finely" },
+			{ "group": "Nuégados", "amount": "2", "unit": "", "ingredient": "eggs, beaten" },
+			{ "group": "Nuégados", "amount": "1", "unit": "tsp", "ingredient": "baking powder" },
+			{ "group": "Nuégados", "amount": "3", "unit": "oz", "ingredient": "queso fresco, grated" },
+			{ "group": "Nuégados", "amount": "1/4", "unit": "tsp", "ingredient": "salt" },
+			{ "group": "Nuégados", "amount": "", "unit": "none", "ingredient": "vegetable oil, (for frying)" },
+			{ "group": "Panela Honey", "amount": "1/2", "unit": "lb", "ingredient": "panela, broken into pieces or ground" },
+			{ "group": "Panela Honey", "amount": "1", "unit": "cup", "ingredient": "water" },
+			{ "group": "Panela Honey", "amount": "2", "unit": "", "ingredient": "cinnamon stick" },
+			{ "group": "Panela Honey", "amount": "3", "unit": "", "ingredient": "cloves" }
+		],
+		"steps": [
+			"Combine the panela sugar, water and spices into a saucepan.",
+			"Simmer over medium heat until the sugar dissolves.",
+			"Stir and cook over low heat for 10-15 minutes, until the mixture thickens enough to coat a spoon.",
+			"Mix all the ingredients to form a dough and shape the nuégados into small discs.",
+			"Heat a large pot with oil and fry the nuégados until they turn golden brown.",
+			"Serve the nuégados with the honey."
+		],
+		"important": false, "date": 1580617034882, "val": "Nuégados de Yuca"
+	},
+	"sv|atol": {
+		"name": "Atol de Elote", "servings": "3", "servingUnit": "servings",
+		"author": "Sasha Martin", "source": "http://globaltableadventure.com/recipe/creamy-sweet-corn-drink-atol-de-elote/",
+		"prepTime": "5m", "cookTime": "15-20m", "totalTime": "20-25m",
+		"notes": "",
+		"tags": ["E", "El Salvador"],
+		"ingredience": [
+			{ "amount": "1", "unit": "lb", "ingredient": "corn" },
+			{ "amount": "2", "unit": "cup", "ingredient": "milk, plus extra as needed" },
+			{ "amount": "1", "unit": "", "ingredient": "cinnamon stick" },
+			{ "amount": "1/4", "unit": "cup", "ingredient": "sugar" },
+			{ "amount": "", "unit": "none", "ingredient": "ground cinnamon, for garnish" }
+		],
+		"steps": [
+			"Add all ingredients to a pot, with sugar to taste. Heat pot to a simmer for 15-20 minutes.",
+			"Blend it all up.",
+			"Strain and serve hot, topping with ground cinnamon."
+		],
+		"important": false, "date": 1580616847295, "val": "Atol de Elote"
+	},
+	"sv|pupusa": {
+		"name": "Cheese Pupusas", "servings": "8", "servingUnit": "servings",
+		"author": "peep", "source": "https://www.allrecipes.com/recipe/257631/basic-cheese-pupusas/",
+		"prepTime": "40m", "cookTime": "12m", "totalTime": "8h 57m", 
+		"notes": "", 
+		"tags": ["E", "El Salvador"],
+		"ingredience": [
+			{ "group": "Curtido", "amount": "2", "unit": "cup", "ingredient": "shredded green cabbage" },
+			{ "group": "Curtido", "amount": "1/2", "unit": "cup", "ingredient": "apple cider vinegar" },
+			{ "group": "Curtido", "amount": "1/2", "unit": "cup", "ingredient": "water, or more as needed" },
+			{ "group": "Curtido", "amount": "1/2", "unit": "", "ingredient": "onion, thinly sliced" },
+			{ "group": "Curtido", "amount": "1", "unit": "", "ingredient": "carrot, grated" },
+			{ "group": "Curtido", "amount": "1/4", "unit": "tsp", "ingredient": "ground oregano" },
+			{ "group": "Curtido", "amount": "1/4", "unit": "tsp", "ingredient": "red pepper flakes" },
+			{ "group": "Curtido", "amount": "", "unit": "toTaste", "ingredient": "salt" },
+			{ "group": "Pupusa Dough", "amount": "3", "unit": "cup", "ingredient": "masa harina flour" },
+			{ "group": "Pupusa Dough", "amount": "1.5", "unit": "cup", "ingredient": "water" },
+			{ "group": "Pupusa Dough", "amount": "1/2", "unit": "tsp", "ingredient": "salt" },
+			{ "group": "Pupusa Filling", "amount": "1", "unit": "cup", "ingredient": "ricotta cheese" },
+			{ "group": "Pupusa Filling", "amount": "1", "unit": "cup", "ingredient": "shredded mozzarella cheese" },
+			{ "group": "Pupusa Filling", "amount": "2", "unit": "tbsp", "ingredient": "heavy whipping cream, or more to taste" },
+			{ "group": "Pupusa Filling", "amount": "1", "unit": "", "ingredient": "scallion, finely chopped" },
+			{ "group": "Pupusa Filling", "amount": "", "unit": "none", "ingredient": "cooking spray" }
+		],
+		"steps": [
+			"Salt some water in a pot and bring it to a boil.",
+			"Put cabbage in pot and cook uncovered for around 3 minutes until slightly softened.",
+			"Drain the cabbage and immediately place in an ice water bath to stop the cooking.",
+			"Combine all the curtido ingredients in a large bowl. Mix and refrigerate for 8 hours or overnight.",
+			"Mix water, masa harina, and [1/2 teaspoon] salt together, then knead until a smooth, moist dough forms. Add more water if the dough cracks. Let rest for 5-10 minutes.",
+			"Stir filling ingredients together.",
+			"Divide the dough into [8] balls. Press down into the center of each ball to form a hole, filling with the cheese mix.",
+			"Pinch the sides together to seal the dough ball, then flatten into round [1/4 inch]-thick discs with your hands.",
+			"Grease and preheat a pan over medium heat. Cook the pupusas in batches for 2-3 minutes per side, until browned.",
+			"Drain the curtido and serve with the pupusas."
+		],
+		"important": false, "date": 1579840009596, "val": "Cheese Pupusas"
+	},
+	"gq|kongodo": {
+		"name": "Nkate Cake (Kongodo)", "servings": "8", "servingUnit": "servings",
+		"author": "Sarah-Eden Dadoun", "source": "https://www.196flavors.com/equatorial-guinea-nkate-cake-kongodo/",
+		"prepTime": "25m", "cookTime": "30m", "totalTime": "55m",
+		"notes": "",
+		"tags": ["E", "Equatorial Guinea"],
+		"ingredience": [
+			{ "amount": "1", "unit": "lb", "ingredient": "unsalted peanuts" },
+			{ "amount": "1/2", "unit": "", "ingredient": "lemon" },
+			{ "amount": "3", "unit": "tbsp", "ingredient": "water" },
+			{ "amount": "1", "unit": "cup", "ingredient": "caster sugar" }
+		],
+		"steps": [
+			"Preheat the oven to [320F]. Spread peanuts on a baking sheet and roast them for 10 minutes.",
+			"Let the peanuts cool, then crush them with a rolling pin or lightly chop them in a food processor.",
+			"Stir together water, sugar, and some lemon juice in a pot.",
+			"Cook the mixture on medium heat untilt he sugar dissolves and it reaches a temperature of [320F].",
+			"Add the crushed peanuts to the syrup and stir constantly for 2-3 minutes over low heat.",
+			"Spread the mixture on a greased cutting board or parchment paper and roll to a thickness of [1/3 inch].",
+			"Quickly create a grid pattern with a knife across the top of the mixture while it's still hot.",
+			"Once it has cooled, break into pieces along the grid."
+		],
+		"important": false, "date": 1580618168244, "val": "Nkate Cake (Kongodo)"
+	},
+	"gq|porridge": {
+		"name": "Ginger Millet Porridge", "servings": "3", "servingUnit": "servings",
+		"author": "", "source": "http://globaltableadventure.com/recipe/ginger-millet-porridge/",
+		"prepTime": "5m", "cookTime": "10-15m", "totalTime": "20-25m",
+		"notes": "",
+		"tags": ["E", "Equatorial Guinea"],
+		"ingredience": [
+			{ "amount": "1", "unit": "cup", "ingredient": "millet flour" },
+			{ "amount": "1/2", "unit": "tsp", "ingredient": "ginger root, grated" },
+			{ "amount": "2", "unit": "tbsp", "ingredient": "sugar, plus extra as needed" },
+			{ "amount": "1", "unit": "cup", "ingredient": "water" },
+			{ "amount": "1 1/2", "unit": "cup", "ingredient": "milk" },
+			{ "amount": "", "unit": "none", "ingredient": "ground cinnamon" }
+		],
+		"steps": [
+			"Whisk together the flour, sugar, ginger, and water until a smooth mixture forms.",
+			"Add the mixture to a small pot.",
+			"Place the pot on the stove and stir in the milk.",
+			"Heat the mixture until it simmers and cook until thickened, whisking constantly and adding more milk if needed.",
+			"Top with sugar and cinnamon and serve."
+		],
+		"important": false, "date": 1580618358008, "val": "Ginger Millet Porridge"
+	},
+	"gq|ginja": {
+		"name": "Ginja Beer", "servings": "6", "servingUnit": "servings",
+		"author": "Sabrina Gérard", "source": "https://www.196flavors.com/equatorial-guinea-ginger-beer-ginja-beer/",
+		"prepTime": "30m", "cookTime": "10m", "totalTime": "2d 1h40m",
+		"notes": "",
+		"tags": ["E", "Equatorial Guinea"],
+		"ingredience": [
+			{ "group": "Ginja Syrup", "amount": "1", "unit": "cup", "ingredient": "caster sugar" },
+			{ "group": "Ginja Syrup","amount": "1/2", "unit": "cup", "ingredient": "water" },
+			{ "group": "Ginja Syrup","amount": "5", "unit": "oz", "ingredient": "fresh ginger, peeled and finely grated" },
+			{ "group": "Ginja Beer", "amount": "1/4", "unit": "tsp", "ingredient": "dehydrated baker's yeast" },
+			{ "group": "Ginja Beer", "amount": "", "unit": "none", "ingredient": "Ginja Syrup" },
+			{ "group": "Ginja Beer", "amount": "3", "unit": "tbsp", "ingredient": "freshly squeezed lemon juice" },
+			{ "group": "Ginja Beer", "amount": "7", "unit": "cup", "ingredient": "water" }
+		],
+		"steps": [
+			"Heat a saucepan over medium heat and add the ginja syrup ingredients.",
+			"Stir until the sugar is dissolved and the mixture begins to boil",
+			"Turn off the heat and steep the mixture for one hour.",
+			"Strain the solids from the mixture and let the syrup cool.",
+			"Add all of the ingredients to a large bottle.",
+			"Seal the bottle and shake until the yeast dissolves.",
+			"Store the bottle in at room temperature, out of direct sunlight, for 2 days.",
+			"During this time, open the bottle once every day to let out excess gas.",
+			"Refrigerate after 2 days to slow down the fermentation."
+		],
+		"important": false, "date": 1580618568525, "val": "Ginja Beer (Ginger Beer)"
+	},
+	"er|zigni": {
+		"name": "Zigni Spaghetti", "servings": "2", "servingUnit": "servings",
+		"author": "Spencer", "source": "https://thespiceisland.blogspot.com/2010/04/spaghetti-in-zingi-sauce_05.html",
+		"prepTime": "5m", "cookTime": "25m", "totalTime": "30m",
+		"notes": "",
+		"tags": ["E", "Eritrea"],
+		"ingredience": [
+			{ "amount": "4", "unit": "tbsp", "ingredient": "olive oil" },
+			{ "amount": "1", "unit": "", "ingredient": "large onion, chopped" },
+			{ "amount": "4", "unit": "", "ingredient": "garlic cloves, minced" },
+			{ "amount": "1.5", "unit": "lb", "ingredient": "tomatoes, chopped" },
+			{ "amount": "4", "unit": "tsp", "ingredient": "berbere" },
+			{ "amount": "1.5", "unit": "tsp", "ingredient": "sea salt" },
+			{ "amount": "1", "unit": "tbsp", "ingredient": "black pepper" },
+			{ "amount": "1/2", "unit": "tsp", "ingredient": "cayenne powder" },
+			{ "amount": "1", "unit": "", "ingredient": "juice from a lemon" },
+			{ "amount": "7", "unit": "oz", "ingredient": "dry spaghetti" },
+			{ "amount": "8", "unit": "oz", "ingredient": "crumbled tempeh, TVP, or beef" },
+			{ "amount": "", "unit": "toTaste", "ingredient": "parmesan cheese" }
+		],
+		"steps": [
+			"Heat a pot with [2tbsp] oil over medium-high heat.",
+			"Add onion and sauté for 3-4 minutes until it turns transparent.",
+			"Add the garlic and sauté for another 2 minutes.",
+			"Add everything but the spaghetti, tempeh, and cheese to the pot. Reduce heat to a simmer and stir frequently for around 15 minutes until the sauce reaches the desired consistency.",
+			"Cook the spaghetti and sauté the tempeh according to their packaged instructions.",
+			"Stir the tempeh into the sauce and cook for another couple minutes.",
+			"Plate the pasta, then pour the sauce on top. Add parmesan."
+		],
+		"important": false, "date": 1581277822099, "val": "Zigni Spaghetti"
+	},
+	"er|tsebhi": {
+		"name": "Tsebhi Sega", "servings": "2", "servingUnit": "servings",
+		"author": "Lisa", "source": "https://www.storyofakitchen.com/meat-recipes/tsebhi-sega-spicy-eritrean-meat-recipe/",
+		"prepTime": "10m", "cookTime": "1hr", "totalTime": "1h10m",
+		"notes": "",
+		"tags": ["E", "Eritrea"],
+		"ingredience": [
+			{ "amount": "1", "unit": "", "ingredient": "medium onion, finely chopped" },
+			{ "amount": "2", "unit": "tbsp", "ingredient": "vegetable oil" },
+			{ "amount": "4.5", "unit": "tsp", "ingredient": "berbere" },
+			{ "amount": "1", "unit": "lb", "ingredient": "ground lamb" },
+			{ "amount": "1", "unit": "tsp", "ingredient": "grated ginger" },
+			{ "amount": "1", "unit": "tsp", "ingredient": "garlic, minced" },
+			{ "amount": "16", "unit": "fl oz", "ingredient": "tomato puree" },
+			{ "amount": "", "unit": "toTaste", "ingredient": "salt, pepper" },
+			{ "amount": "2", "unit": "tbsp", "ingredient": "clarified butter" }
+		],
+		"steps": [
+			"Heat the oil in a large pot, then cook the onions until slightly browned.",
+			"Add the clarified butter and berbere spice and cook until fragrant. Simmer at low heat for about 8 minutes.",
+			"Add everything but the meat and cook for 5 more minutes.",
+			"Add the meat and simmer until done (around 30-40 minutes), adding water if needed.",
+			"Serve with flatbread."
+		],
+		"important": false, "date": 1581280483046, "val": "Tsebhi Sega"
+	},
+	"ee|cottage": {
+		"name": "Kana-kodujuustukotletid", "servings": "12", "servingUnit": "pieces",
+		"author": "", "source": "https://estoniancuisine.com/2019/11/03/cottage-cheese-and-chicken-fritters/",
+		"prepTime": "10m", "cookTime": "10m", "totalTime": "40m",
+		"notes": "",
+		"tags": ["E", "Estonia"],
+		"ingredience": [
+			{ "amount": "450", "unit": "g", "ingredient": "chicken or turkey, ground" },
+			{ "amount": "200", "unit": "g", "ingredient": "cottage cheese" },
+			{ "amount": "1", "unit": "", "ingredient": "onion, diced" },
+			{ "amount": "1", "unit": "", "ingredient": "clove of garlic, minced" },
+			{ "amount": "", "unit": "none", "ingredient": "salt, pepper" },
+			{ "amount": "1", "unit": "", "ingredient": "egg" },
+			{ "amount": "1", "unit": "", "ingredient": "handful of sunflower, pumpkin, flax, and/or sesame seeds" },
+			{ "amount": "", "unit": "none", "ingredient": "bread crumbs" },
+			{ "amount": "", "unit": "none", "ingredient": "oil, for frying" }
+		],
+		"steps": [
+			"Mix everything but the bread crumbs together.",
+			"Let rest in refrigerator for 20 minutes.",
+			"Roll out the mixture into small balls and dip them into the breadcrumbs.",
+			"Fry the balls in hot oil on both sides."
+		],
+		"important": false, "date": 1580863863359, "val": "Kana-kodujuustukotletid"
+	},
+	"ee|kohuke": {
+		"name": "Kohuke", "servings": "12", "servingUnit": "pieces",
+		"author": "Johannes Tamegger", "source": "https://www.youtube.com/watch?v=gS153553pkA",
+		"prepTime": "20m", "cookTime": "", "totalTime": "1h10m",
+		"notes": "",
+		"tags": ["E", "Estonia"],
+		"ingredience": [
+			{ "amount": "250", "unit": "g", "ingredient": "cheese curd" },
+			{ "amount": "60", "unit": "g", "ingredient": "melted butter" },
+			{ "amount": "1", "unit": "tbsp", "ingredient": "lemon peel" },
+			{ "amount": "1", "unit": "unit", "ingredient": "vanilla bean" },
+			{ "amount": "120", "unit": "g", "ingredient": "sugar" },
+			{ "amount": "200", "unit": "g", "ingredient": "chocolate" }
+		],
+		"steps": [
+			"Mix everything but the chocolate together.",
+			"Pour mixture into a rectangular mold.",
+			"Freeze for 40 minutes.",
+			"While freezing the mixture, melt chocolate in a double boiler.",
+			"Remove mixture from mold, cut into rectangles.",
+			"Dip each rectangle in chocolate, then let harden in fridge for 20 minutes."
+		],
+		"important": false, "date": 1580863863359, "val": "Kohuke"
+	},
+	"sz|mealie": {
+		"name": "Mealie Corn Bread", "servings": "5", "servingUnit": "servings",
+		"author": "Immaculate Bites", "source": "https://www.africanbites.com/mealie-bread-south-african-corn-bread/#wprm-recipe-container-572498",
+		"prepTime": "15m", "cookTime": "45m", "totalTime": "1hr",
+		"notes": "",
+		"tags": ["E", "Eswatini"],
+		"ingredience": [
+			{ "amount": "2", "unit": "cups", "ingredient": "fresh corn" },
+			{ "amount": "130", "unit": "g", "ingredient": "all-purpose flour" },
+			{ "amount": "95", "unit": "g", "ingredient": "corn meal" },
+			{ "amount": "2", "unit": "tsp", "ingredient": "baking powder" },
+			{ "amount": "1/2", "unit": "tsp", "ingredient": "baking soda" },
+			{ "amount": "2", "unit": "tbsp", "ingredient": "sugar" },
+			{ "amount": "3/4", "unit": "tsp", "ingredient": "salt" },
+			{ "amount": "115", "unit": "g", "ingredient": "sour cream" },
+			{ "amount": "120", "unit": "mL", "ingredient": "milk" },
+			{ "amount": "2", "unit": "", "ingredient": "large eggs" },
+			{ "amount": "2", "unit": "tsp", "ingredient": "fresh basil, chopped" },
+			{ "amount": "1", "unit": "tsp", "ingredient": "smoked paprika, optional" },
+			{ "amount": "57", "unit": "g", "ingredient": "unsalted butter, melted" }
+		],
+		"steps": [
+			"Grease a cake pan or line it with parchment paper and preheat the oven to [350F].",
+			"Chop kernels off the corn if you're using a cob, then pulse briefly with a blender or food processor until it's chopped up a good bit.",
+			"In a separate bowl, whisk together all the dry ingredients except the basil.",
+			"Add all the non-butter liquid ingredients and whisk them, too.",
+			"Toss in the basil, butter, and corn chunks, then mix until combined.",
+			"Pour the batter into the cake pan and bake for 40-45 minutes or until golden brown."
+		],
+		"important": false, "date": 1581319367611, "val": "Mealie Corn Bread"
+	},
+	"sz|slaai": {
+		"name": "Slaai", "servings": "4", "servingUnit": "servings",
+		"author": "Mike Benayoun", "source": "https://www.196flavors.com/eswatini-slaai/",
+		"prepTime": "10m", "cookTime": "0m", "totalTime": "30m",
+		"notes": "",
+		"tags": ["E", "Eswatini"],
+		"ingredience": [
+			{ "amount": "3", "unit": "tbsp", "ingredient": "lemon juice" },
+			{ "amount": "1", "unit": "tsp", "ingredient": "fresh grated ginger" },
+			{ "amount": "1/2", "unit": "tsp", "ingredient": "salt" },
+			{ "amount": "2", "unit": "large", "ingredient": "avocados" },
+			{ "amount": "1/2", "unit": "cup", "ingredient": "peanuts, crushed" },
+			{ "amount": "", "unit": "none", "ingredient": "radishes, thinly sliced (optional)" }
+		],
+		"steps": [
+			"Combine ginger, salt, and lemon juice into a bowl.",
+			"Cut the avocado into [1/2 inch] chunks, and gently mix into the marinade.",
+			"Marinate for 20 minutes, then sprinkle with crushed peanuts and radishes."
+		],
+		"important": false, "date": 1581320110594, "val": "Slaai"
+	},
+	"et|niterkibbeh": {
+		"name": "Niter Kibbeh", "servings": "2", "servingUnit": "cups",
+		"author": "Larry Jacobsen", "source": "https://www.whats4eats.com/sauces/niter-kibbeh-recipe",
+		"prepTime": "5m", "cookTime": "1hr", "totalTime": "1h5m",
+		"notes": "",
+		"tags": ["E", "Ethiopia"],
+		"ingredience": [
+			{ "amount": "1", "unit": "lb", "ingredient": "unsalted butter" },
+			{ "amount": "1/2", "unit": "", "ingredient": "onion, chopped" },
+			{ "amount": "2", "unit": "", "ingredient": "garlic cloves, crushed" },
+			{ "amount": "2", "unit": "", "ingredient": "gingerroot, cut into 1/4\" slices" },
+			{ "amount": "3", "unit": "", "ingredient": "cardamom pods" },
+			{ "amount": "1", "unit": "", "ingredient": "cinnamon stick" },
+			{ "amount": "3", "unit": "", "ingredient": "whole cloves" },
+			{ "amount": "1", "unit": "tsp", "ingredient": "fennugreek seeds" },
+			{ "amount": "1/2", "unit": "tsp", "ingredient": "turmeric" }
+		],
+		"steps": [
+			"Melt butter in a saucepan over low heat.",
+			"Add everything else and simmer on the lowest setting heat for an hour.",
+			"Strain the liquid, discarding the solids, and store in the refrigerator."
+		],
+		"important": false, "date": 1580686151288, "val": "Niter Kibbeh"
+	},
+	"et|kitcha": {
+		"name": "Kicha FitFit", "servings": "4", "servingUnit": "servings",
+		"author": "Shalom", "source": "http://www.tefforama.com/recipes/traditional/kicha-fitfit/",
+		"prepTime": "", "cookTime": "", "totalTime": "30m",
+		"notes": "",
+		"tags": ["E", "Ethiopia"],
+		"ingredience": [
+			{ "group": "Kitcha", "amount": "2", "unit": "cup", "ingredient": "ivory teff flour" },
+			{ "group": "Kitcha", "amount": "600", "unit": "mL", "ingredient": "water" },
+			{ "group": "Kitcha", "amount": "1/4", "unit": "tbsp", "ingredient": "salt" },
+			{ "group": "Kitcha", "amount": "", "unit": "none", "ingredient": "oil to grease pan" },
+			{ "group": "Sauce", "amount": "2", "unit": "tbsp", "ingredient": "Niter Kibbeh" },
+			{ "group": "Sauce", "amount": "2", "unit": "tbsp", "ingredient": "Berbere seasoning" },
+			{ "group": "Sauce", "amount": "", "unit": "none", "ingredient": "pinch of salt" },
+			{ "group": "Sauce", "amount": "", "unit": "toTaste", "ingredient": "Greek yoghurt" }
+		],
+		"steps": [
+			"Mix water, flour, and salt.",
+			"Put a pan on the stove set to medium heat, grease with oil, then pour some batter into the pan. Cook both sides until golden, and repeat with the remaining batter.",
+			"Combine the Niter Kibbeh, Berbere, and salt in a pan and heat on low.",
+			"Tear the bread into pieces and add them to the melted butter and spice mixture. Stir to coat.",
+			"Top with yoghurt and serve."
+		],
+		"important": false, "date": 1580686689200, "val": "Kicha FitFit"
+	},
+	"et|wat": {
+		"name": "Doro Wat", "servings": "4", "servingUnit": "servings",
+		"author": "Kimberly Killebrew", "source": "https://www.daringgourmet.com/doro-wat-spicy-ethiopian-chicken-stew/",
+		"prepTime": "10m", "cookTime": "2h30m", "totalTime": "2h40m",
+		"notes": "",
+		"tags": ["E", "Ethiopia"],
+		"ingredience": [
+			{ "amount": "2 1/2", "unit": "lb", "ingredient": "chicken thighs or breasts" },
+			{ "amount": "2", "unit": "tbsp", "ingredient": "fresh lemon juice" },
+			{ "amount": "2", "unit": "tbsp", "ingredient": "niter kibbeh" },
+			{ "amount": "2", "unit": "tbsp", "ingredient": "extra virgin olive oil" },
+			{ "amount": "3", "unit": "cup", "ingredient": "red onions, finely minced" },
+			{ "amount": "3", "unit": "tbsp", "ingredient": "butter" },
+			{ "amount": "1", "unit": "tbsp", "ingredient": "garlic, finely minced" },
+			{ "amount": "1", "unit": "tbsp", "ingredient": "ginger, finely minced" },
+			{ "amount": "1/4", "unit": "cup", "ingredient": "berbere" },
+			{ "amount": "1 1/2", "unit": "tsp", "ingredient": "salt" },
+			{ "amount": "1/2", "unit": "cup", "ingredient": "Tej (Ethiopian honey wine), or white wine mixed with 1 teaspoon honey" },
+			{ "amount": "1", "unit": "cup", "ingredient": "chicken stock" },
+			{ "amount": "4", "unit": "", "ingredient": "hard-boiled eggs" }
+		],
+		"steps": [
+			"After hard-boiling eggs, pierce them all around about [1/4 inch] deep.",
+			"Place the chicken in a bowl and cover with lemon juice. Let marinate at room temperature for 30 minutes or more.",
+			"Heat the Niter Kibbeh and olive oil in a pot. Add onions and saute on low heat, covered, for 45 minutes. Stir occasionally.",
+			"Add ginger, garlic, and [1tbsp] butter. Continue sauteing, covered and stirring occasionally, for 20 minutes.",
+			"Add [2tbsp] of butter and Berbere. Continue sauteing, covered and stirring occasionally, for another 30 minutes.",
+			"Add everything else but the eggs and bring to a boil. Reduce heat to the lowest setting, then cover, simmer, and stir occasionally for 45 minutes.",
+			"Add eggs and simmer for 15 more minutes. Still covered. Still stirring occasionally.",
+			"Cut the eggs into halves or quarters and arrange on plates with the stew. Serve with injera."
+		],
+		"important": false, "date": 1581281378031, "val": "Doro Wat"
+	},
+	"et|injera": {
+		"name": "Injera", "servings": "6", "servingUnit": "servings",
+		"author": "Kimberly Killebrew", "source": "https://www.daringgourmet.com/authentic-injera-ethiopian-flatbread/",
+		"prepTime": "10m", "cookTime": "10m", "totalTime": "4d20m",
+		"notes": "",
+		"tags": ["E", "Ethiopia"],
+		"ingredience": [
+			{ "amount": "", "unit": "none", "ingredient": "yeast" },
+			{ "amount": "240", "unit": "g", "ingredient": "teff flour, optionally with some barley or wheat flour" },
+			{ "amount": "0.75", "unit": "L", "ingredient": "water" }
+		],
+		"steps": [
+			"Combine flour and water, plus a tiny bit of yeast. Stir to combine.",
+			"Loosely cover and let sit at room temperature for 2-3 days.",
+			"Heat a pan over medium heat. Pour batter onto pan, and cook until bubbles form and pop.",
+			"Cover and turn off heat. LEt steam for a few minutes, then remove from pan and repeat with remaining batter."
+		],
+		"important": false, "date": 1581320525819, "val": "Injera"
+	},
+	"fj|mutton": {
+		"name": "Corned Mutton Curry", "servings": "2", "servingUnit": "servings",
+		"author": "Sanjana Soni", "source": "https://feedingthesonis.wordpress.com/2013/12/03/corned-mutton-curry-gravy-version/",
+		"prepTime": "10m", "cookTime": "40m", "totalTime": "50m",
+		"notes": "",
+		"tags": ["F", "Fiji"],
+		"ingredience": [
+			{ "amount": "4", "unit": "", "ingredient": "medium sized potatoes" },
+			{ "amount": "326", "unit": "g", "ingredient": "canned corned mutton" },
+			{ "amount": "1/2", "unit": "", "ingredient": "onion" },
+			{ "amount": "3", "unit": "", "ingredient": "curry leaves" },
+			{ "amount": "2", "unit": "", "ingredient": "garlic cloves" },
+			{ "amount": "1", "unit": "in", "ingredient": "piece of ginger" },
+			{ "amount": "1/2", "unit": "tsp", "ingredient": "tumeric powder" },
+			{ "amount": "1", "unit": "tsp", "ingredient": "Garam Masala" },
+			{ "amount": "1", "unit": "tsp", "ingredient": "Kashmiri chilli powder (optional)" },
+			{ "amount": "1", "unit": "pinch", "ingredient": "mustard, cumin, and fenugreek seeds" },
+			{ "amount": "", "unit": "toTaste", "ingredient": "salt" },
+			{ "amount": "2", "unit": "tbsp", "ingredient": "oil" }
+		],
+		"steps": [
+			"Peel and cut potatoes into smallish cubes.",
+			"Heat the oil in a pan and add the seeds. Heat until they brown slightly.",
+			"Add onions, crushed and minced garlic and ginger, and cook until brown.",
+			"Add everything but the potatoes and mutton and stir to combine, then toss in the potatoes.",
+			"Cook on medium heat until potatoes are done, then add corned mutton and cook for 5 more minutes.",
+			"Garnish with cilantro and serve with rice."
+		],
+		"important": false, "date": 1584242364314, "val": "Corned Mutton Curry"
+	},
+	"fj|kava": {
+		"name": "Kava Drink", "servings": "1", "servingUnit": "servings",
+		"author": "TheCoconetTV", "source": "https://www.youtube.com/watch?v=9Anozq6zSnQ",
+		"prepTime": "10m", "cookTime": "0m", "totalTime": "10m",
+		"notes": "",
+		"tags": ["F", "Fiji"],
+		"ingredience": [
+			{ "amount": "1", "unit": "tbsp", "ingredient": "kava powder" },
+			{ "amount": "1/2", "unit": "cup", "ingredient": "water" }
+		],
+		"steps": [
+			"Put the kava in a cloth bag or cheesecloth and hold it over a container.",
+			"Pour the water, in small amounts, over the kava, and press it down so it mixes with the powder and soaks through the cloth.",
+			"Repeat until all water has gone through the cloth and the container has plenty of brownish water in it."
+		],
+		"important": false, "date": 1584242364314, "val": "Kava Drink"
+	},
+	"fj|cassava": {
+		"name": "Cassava Cake", "servings": "3", "servingUnit": "servings",
+		"author": "Kittyz Kitchen", "source": "https://www.youtube.com/watch?v=fj48hFgr69o",
+		"prepTime": "20m", "cookTime": "50m", "totalTime": "1hr30m",
+		"notes": "",
+		"tags": ["F", "Fiji"],
+		"ingredience": [
+			{ "amount": "1", "unit": "cup", "ingredient": "dried coconut flakes" },
+			{ "amount": "1/2", "unit": "cup", "ingredient": "white sugar" },
+			{ "amount": "1", "unit": "unit", "ingredient": "can of sweetened condensed milk" },
+			{ "amount": "2", "unit": "cup", "ingredient": "grated cassava" }
+		],
+		"steps": [
+			"Mix sugar, coconut, and grated cassava. Add half of the condensed milk, stir to combine. Let rest for 10 minutes.",
+			"Stir one more time and spread into a cake tin. Bake at [180C] for 40 minutes.",
+			"Remove from oven, pour rest of condensed milk on top. Spread evenly, then bake for 7-10 more minutes."
+		],
+		"important": false, "date": 1584242364314, "val": "Cassava Cake"	
+	},
+	"fi|pasties": {
+		"name": "Karelian Pasties", "servings": "20", "servingUnit": "pasties",
+		"author": "NcMysteryShopper", "source": "https://www.food.com/recipe/karelian-pasties-karjalan-piirakat-136480",
+		"prepTime": "", "cookTime": "", "totalTime": "1hr",
+		"notes": "",
+		"tags": ["F", "Finland"],
+		"ingredience": [
+			{ "group": "Pasty Dough", "amount": "500", "unit": "ml", "ingredient": "fine rye flour" },
+			{ "group": "Pasty Dough", "amount": "1/2", "unit": "tsp", "ingredient": "salt" },
+			{ "group": "Pasty Dough", "amount": "200", "unit": "ml", "ingredient": "water" },
+			{ "group": "Pasty Dough", "amount": "1", "unit": "tbsp", "ingredient": "oil" },
+			{ "group": "Rice Filling", "amount": "150", "unit": "ml", "ingredient": "short-grain rice" },
+			{ "group": "Rice Filling", "amount": "300", "unit": "ml", "ingredient": "water" },
+			{ "group": "Rice Filling", "amount": "650", "unit": "ml", "ingredient": "whole milk" },
+			{ "group": "Rice Filling", "amount": "1", "unit": "", "ingredient": "egg, or 1-2 egg yolk" },
+			{ "group": "Rice Filling", "amount": "1", "unit": "pinch", "ingredient": "salt" },
+			{ "group": "Potato Filling", "amount": "700", "unit": "g", "ingredient": "potatoes, peeled" },
+			{ "group": "Potato Filling", "amount": "50", "unit": "ml", "ingredient": "cream" },
+			{ "group": "Potato Filling", "amount": "2", "unit": "", "ingredient": "eggs" },
+			{ "group": "Potato Filling", "amount": "1", "unit": "tbsp", "ingredient": "butter" },
+			{ "group": "Potato Filling", "amount": "1", "unit": "pinch", "ingredient": "salt" },
+			{ "group": "Brushing", "amount": "150", "unit": "ml", "ingredient": "whole milk" },
+			{ "group": "Brushing", "amount": "1", "unit": "tablespoon", "ingredient": "butter" },
+			{ "group": "Spread", "amount": "4", "unit": "", "ingredient": "eggs" },
+			{ "group": "Spread", "amount": "40", "unit": "g", "ingredient": "butter" }
+		],
+		"steps": [
+			"For the Rice Filling: boil water, add rice and simmer until rice absorbs water.",
+			"Add milk and boil, then cook for a few minutes, stirring constantly. Lower heat to low, cover pan, and let simmer, stirring occasionally, for 30-40 minutes until it has thickened into a porridge-like texture.",
+			"Let cool, then add [1] egg or [1-2] egg yolks in and add salt to taste.", 
+			"For the Potato Filling: Boil potatoes until tender, then save [50-100 ml] of the liquid when draining.",
+			"Mash potatoes and let cool. Add eggs and enough reserved liquid and cream to get a smooth not-too-runny texture.",
+			"Add butter and salt to taste, stir, cover, and set aside to cool.",
+			"For the Pasty Dough: Mix flour and salt, then add oil andw ater until a non-sticky dough forms.",
+			"Divide into [20] equal pieces and roll into small balls.",
+			"With a rolling pin, roll out balls into thin disks around [1mm] thick and [10-15cm] in diameter. Keep covered while rolling out the rest to stop them from drying out.",
+			"Spread filling onto the center of a dough ball. Raise edges toward the center and pinch to make an oval ridge, keeping the center open. Repeat with remaining dough balls.",
+			"Put pasties on parchment-lined baking sheet and bake at [255-300c] for 5-7 minutes or until they turn a darkish brown.",
+			"While baking, heat [150ml] whole milk in saucepan, add butter, and let melt. Once the pasties are cooked, dip them one at a time into the mixture and then place in a large bowl.",
+			"Cover bowl with parchment paper, and let soften for half an hour.",
+			"For Spread: Boil eggs for 10 minutes. Rinse with cold water and shell them. Mash eggs together with butter. Season to taste with salt, then spread on pasties."
+		],
+		"important": false, "date": 1584821447124, "val": "Karelian Pasties"
+	},
+	"fi|casserole": {
+		"name": "Sweetened Potato Casserole", "servings": "5", "servingUnit": "servings",
+		"author": "stormylee", "source": "https://www.food.com/recipe/sweetened-potato-casserole-imelletty-perunalaatikko-196989",
+		"prepTime": "", "cookTime": "", "totalTime": "3hr20m",
+		"notes": "",
+		"tags": ["F", "Finland"],
+		"ingredience": [
+			{ "amount": "1", "unit": "kg", "ingredient": "russet potato" },
+			{ "amount": "50", "unit": "ml", "ingredient": "all-purpose flour" },
+			{ "amount": "500", "unit": "ml", "ingredient": "milk" },
+			{ "amount": "50", "unit": "g", "ingredient": "butter or margarine" },
+			{ "amount": "1.5", "unit": "tsp", "ingredient": "salt" },
+			{ "amount": "1/2", "unit": "tsp", "ingredient": "ground nutmeg" },
+			{ "amount": "2", "unit": "tbsp", "ingredient": "treacle or molasses (optional)" }
+		],
+		"steps": [
+			"Clean potatoes and boil until cooked.",
+			"Drain water and let moisture evaporate. Once the potatoes are dry, peel and mash them.",
+			"Add flour to potatoes, mix, and let stand in a warm place (no hotter than [50c]) for 3-4 hours or overnight.",
+			"Add milk and butter to a pan over medium heat until milk is warm and butter is melted.",
+			"Add melted butter, warm milk, salt, and nutmeg into the potato mix and stir to combine. Optionally add treacle if mixture isn't sweet enough.",
+			"Pour into greased pans - no more than half full - and pour some treacle on top. Cook at [150c] for 2-3 hours."
+		],
+		"important": false, "date": 1584822237581, "val": "Sweetened Potato Casserole"
+	},
+	"fr|boeuf": {
+		"name": "Boeuf Bourguignon", "servings": "6", "servingUnit": "servings",
+		"author": "Chef Kate", "source": "https://www.food.com/recipe/boeuf-bourguignon-a-la-julia-child-148007",
+		"prepTime": "30m", "cookTime": "4h30m", "totalTime": "5hr",
+		"notes": "",
+		"tags": ["F", "France"],
+		"ingredience": [
+			{ "group": "Stew", "amount": "6", "unit": "oz", "ingredient": "bacon" },
+			{ "group": "Stew", "amount": "1", "unit": "tbsp", "ingredient": "olive oil" },
+			{ "group": "Stew", "amount": "3", "unit": "lb", "ingredient": "lean stewing beef, cubed" },
+			{ "group": "Stew", "amount": "1", "unit": "", "ingredient": "carrot, peeled and sliced" },
+			{ "group": "Stew", "amount": "1", "unit": "", "ingredient": "onion, peeled and sliced" },
+			{ "group": "Stew", "amount": "1", "unit": "tsp", "ingredient": "salt" },
+			{ "group": "Stew", "amount": "1/4", "unit": "tsp", "ingredient": "pepper" },
+			{ "group": "Stew", "amount": "2", "unit": "tbsp", "ingredient": "flour" },
+			{ "group": "Stew", "amount": "3", "unit": "cup", "ingredient": "red wine" },
+			{ "group": "Stew", "amount": "2", "unit": "cup", "ingredient": "beef stock" },
+			{ "group": "Stew", "amount": "1", "unit": "tbsp", "ingredient": "tomato paste" },
+			{ "group": "Stew", "amount": "2", "unit": "", "ingredient": "garlic cloves, mashed" },
+			{ "group": "Stew", "amount": "1", "unit": "", "ingredient": "sprig of thyme" },
+			{ "group": "Stew", "amount": "1", "unit": "", "ingredient": "bay leaf" },
+			{ "group": "Braised Onions", "amount": "18", "unit": "", "ingredient": "white pearl onions, peeled" },
+			{ "group": "Braised Onions", "amount": "1.5", "unit": "tbsp", "ingredient": "unsalted butter" },
+			{ "group": "Braised Onions", "amount": "1.5", "unit": "tbsp", "ingredient": "olive oil" },
+			{ "group": "Braised Onions", "amount": "1/2", "unit": "cup", "ingredient": "beef stock" },
+			{ "group": "Braised Onions", "amount": "", "unit": "toTaste", "ingredient": "salt and pepper" },
+			{ "group": "Braised Onions", "amount": "1", "unit": "", "ingredient": "bay leaf" },
+			{ "group": "Braised Onions", "amount": "1", "unit": "", "ingredient": "sprig of thyme" },
+			{ "group": "Braised Onions", "amount": "2", "unit": "", "ingredient": "sprigs of parsley" },
+			{ "group": "Sauteed Mushrooms", "amount": "1", "unit": "lb", "ingredient": "mushroom, quartered" },
+			{ "group": "Sauteed Mushrooms", "amount": "2", "unit": "tbsp", "ingredient": "unsalted butter" },
+			{ "group": "Sauteed Mushrooms", "amount": "1", "unit": "tbsp", "ingredient": "olive oil" }
+		],
+		"steps": [
+			"For the Stew: Cut bacon into [1/4 in]x[1.5 in] long strips, removing the rinds and saving for later. Simmer for 10 minutes in [1.5 qt] water.",
+			"Drain and dry the bacon and set aside.",
+			"Preheat the oven to [450F].",
+			"Heat olive oil in an oven-resistant pot or casserole dish, then sauté bacon for 2-3m to lightly brown them.",
+			"Remove bacon from pot and set aside. Dry off the beef cubes and sauté them in the olive oil and bacon fat until browned on all sides.",
+			"Remove beef from pot and set aside with bacon. Sauté the carrot and onion in the fat until softened.",
+			"Drain the fat and return the meats to the pan. Toss with salt and pepper, and sprinkle with flour.",
+			"Put the pot, uncovered, in the oven for 4 minutes.",
+			"Remove pot from oven, stir and toss the ingredients, then return to the oven for another 4 minutes.",
+			"Lower the heat to [325F] and remove the pot from the oven.",
+			"Add wine and stock until the meat is barely covered.",
+			"Add garlic, tomato paste, herbs, and bacon rinds to the pot, then bring to a simmer on the stove.",
+			"Cover and put in oven - adjusting the heat if necessary - so the liquid simmers slowly for 3-4 hours until a fork easily pierces the meat.",
+			"For the Onions: Heat butter and oil in a skillet and add the onions.",
+			"Sauté over medium heat for 10 minutes, gently stirring the onions so they brown easily.",
+			"Pour in stock, add herbs and season to taste, and cover.",
+			"Simmer for 40-50m until onions are tender and most of the liquid has evaporated.",
+			"Remove herbs and set onions aside.",
+			"For the Mushrooms: Heat butter and oil in a skillet, then add the mushrooms.",
+			"Toss and stir the mushrooms in the pan for about 5 minutes.",
+			"Remove mushrooms from heat as soon as they are lightly browned, then set aside.",
+			"Combining: Remove pot from oven and empty its contents into a sieve set over another pot.",
+			"Clean the original pot and return the meat to it, tossing the carrots, onions, and herbs that are still in the sieve or strainer.",
+			"Toss the mushrooms and onions over the meat.",
+			"Skim the fat off the sauce, then cover and simmer over medium-low heat for 2-3 minutes, skimming off any additional fat that rises.",
+			"You should have around [2.5 cup] of sauce that can lightly coat the back of a spoon. If it is too thick, add stock. If it is too thin, boil it down.",
+			"Add salt and pepper as needed, then add meat and vegetables.",
+			"Simmer everything, covered, for another 2-3 minutes over medium heat.",
+			"Serve with noodles or potatoes and fresh parsley."
+		],
+		"important": false, "date": 1585429368153, "val": "Boeuf Bourguignon"
+	},
+	"fr|onion": {
+		"name": "French Onion Soup", "servings": "4", "servingUnit": "servings",
+		"author": "Binging with Babish", "source": "https://www.youtube.com/watch?v=1qRir364aNk",
+		"prepTime": "30m", "cookTime": "1h30m", "totalTime": "2hr",
+		"notes": "",
+		"tags": ["F", "France"],
+		"ingredience": [
+			{ "amount": "3", "unit": "lb", "ingredient": "white or yellow onions" },
+			{ "amount": "48", "unit": "oz", "ingredient": "beef broth" },
+			{ "amount": "3", "unit": "", "ingredient": "parsley sprigs" },
+			{ "amount": "2", "unit": "", "ingredient": "carrots, halved" },
+			{ "amount": "2", "unit": "", "ingredient": "thyme sprigs" },
+			{ "amount": "6", "unit": "", "ingredient": "garlic cloves" },
+			{ "amount": "2", "unit": "", "ingredient": "bay leaves" },
+			{ "amount": "", "unit": "toTaste", "ingredient": "black pepper" },
+			{ "amount": "2", "unit": "", "ingredient": "cloves" },
+			{ "amount": "2", "unit": "tbsp", "ingredient": "olive oil" },
+			{ "amount": "2", "unit": "tbsp", "ingredient": "flour" },
+			{ "amount": "1", "unit": "cup", "ingredient": "dry sherry" },
+			{ "amount": "1", "unit": "", "ingredient": "day-old baguette" },
+			{ "amount": "2", "unit": "cup", "ingredient": "Gruyere cheese" },
+			{ "amount": "", "unit": "toTaste", "ingredient": "chives" }
+		],
+		"steps": [
+			"Cut onions in half along their root. Trim root and tip, and stem. Thinly slice onions pole-to-pole.",
+			"Add broth to pot and heat, adding parsley, carrots, thyme, garlic, bay leaves, pepper, and cloves. Simmer for around an hour.",
+			"Add olive oil to a pot or dutch oven, heat for a few minutes, then add in onions.",
+			"Stir onions regularly, over medium heat, until soft and jammy.",
+			"Add flour to the onions, stir, and cook for 1-2 more minutes.",
+			"Deglaze onion pot with sherry. Scrape fond off bottom of pot.",
+			"Cook for a few minutes, then add the strained broth to the onions. Simmer for 5-10 minutes.",
+			"Slice baguette into pieces, drizzle with olive oil, salt, and pepper. Toast for 4-5 minutes.",
+			"Slice a clove of garlic in half and rub over the toast pieces.",
+			"Fill oven-safe crocks or ramekins with soup. Top with cheese, toast, and more cheese.",
+			"Broil for 3-5 minutes until cheese has melted. Top with chives."
+		],
+		"important": false, "date": 1585430663098, "val": "French Onion Soup"
+	},
+	"fr|crossahwn": {
+		"name": "Croissants", "servings": "12", "servingUnit": "croissants",
+		"author": "Bruno Albuoze", "source": "https://www.youtube.com/watch?v=2OAUM0MRgQw",
+		"prepTime": "1hr", "cookTime": "25m", "totalTime": "2d3h",
+		"notes": "",
+		"tags": ["F", "France"],
+		"ingredience": [
+			{ "amount": "500", "unit": "g", "ingredient": "all-purpose flour" },
+			{ "amount": "15", "unit": "g", "ingredient": "instant yeast or twice as much fresh yeast" },
+			{ "amount": "12", "unit": "g", "ingredient": "salt" },
+			{ "amount": "50", "unit": "g", "ingredient": "sugar" },
+			{ "amount": "250", "unit": "g", "ingredient": "water" },
+			{ "amount": "350", "unit": "g", "ingredient": "room temperature butter" },
+			{ "amount": "2", "unit": "", "ingredient": "eggs" }
+		],
+		"steps": [
+			"Make a [6 in]x[6 in] slab of with [250g] of the butter using parchment paper or plastic. Chill.",
+			"Mix all remaining ingredients (minus the eggs) on low speed until combined. Increase speed and mix until dough pulls away from the sides of the bowl; scraping the sides of any dough that sticks to them. Mix for around 8 minutes.",
+			"Put dough in an oiled bowl, cover with a damp towel or oiled plastic wrap and let rise in a warm area.",
+			"Once dough has tripled in size, pour onto a lightly floured surface and punch down.",
+			"Flatten dough, then fold in thirds over itself. Wrap and refrigerate overnight.",
+			"Let butter slab warm up at room temperature for 30 minutes; it should have roughly the same consistency as the dough.",
+			"Roll the dough to be approximately twice as long as the slab of butter. Add the slab of butter to one side, and fold the rest of the dough over.",
+			"Flatten and roll out into a [6in]x[27in] rectangle.",
+			"Sweep off any excess flour, then fold the left side of the dough two-thirds of the way over. Fold the right side to meet it. Flatten, then fold in half and flatten again.",
+			"Flatten to an [8in]x[24in] rectangle. Fold the left side a third of the way into the center, then fold the right side over it.",
+			"Flatten, wrap, and refrigerate for 1 hour.",
+			"Whisk together [2] eggs (or [1] egg plus [1] egg yolk) to make an egg wash.",
+			"Cut dough in half, then refrigerate one half.",
+			"Roll remaining half into [9in]x[18in] rectangle.",
+			"Cut dough into six large croissants.",
+			"Place croissants on greased parchment paper.",
+			"Roll croissants into shape, top with egg wash, and let proof for 2.5-3 hours until risen and spongy.",
+			"Preheat oven to [400F].",
+			"Bake for 10 minutes. Then lower heat to [375F] and bake for another 12-15 minutes."
+		],
+		"important": false, "date": 1585431390812, "val": "Croissants"
+	},
+	"ga|boeuf": {
+		"name": "Boeuf aux Mangues Sauvages", "servings": "4", "servingUnit": "servings",
+		"author": "The Congo Cookbook", "source": "https://web.archive.org/web/20190302231302/http://www.congocookbook.com/meat_recipes/beef_in_wild_mango_kernel_sauce.html",
+		"prepTime": "15m", "cookTime": "1h5m", "totalTime": "1h20m",
+		"notes": "",
+		"tags": ["G", "Gabon"],
+		"ingredience": [
+			{ "amount": "2", "unit": "lb", "ingredient": "Round Steak or Stew Beef" },
+			{ "amount": "1", "unit": "cup", "ingredient": "Crushed Ogbono/Wild Mango Kernel" },
+			{ "amount": "1/2", "unit": "cup", "ingredient": "Palm Oil, or any other oil" },
+			{ "amount": "2", "unit": "", "ingredient": "Tomatoes, peeled and chopped" },
+			{ "amount": "1", "unit": "", "ingredient": "Onion, finely chopped" },
+			{ "amount": "1", "unit": "tbsp", "ingredient": "Dried Shrimp" },
+			{ "amount": "", "unit": "toTaste", "ingredient": "Cayenne Pepper" },
+			{ "amount": "", "unit": "toTaste", "ingredient": "Salt" }
+		],
+		"steps": [
+			"Bring a few cups of salted water to a boil. Cook meat for a few minutes, then drain and set aside.",
+			"Heat the oil in a pot and then add tomatoes, onions, and shrimp.",
+			"Cook for a few minutes, then add the meat. Reduce heat, cover, and simmer for an hour.",
+			"Stir in ogbono, a little bit at a time, so no lumps form. If using whole ogbono, first toast in oil, then crush with mortar and pestle. Adjust seasoning.",
+			"Serve with boiled sweet potatoes."
+		],
+		"important": false, "date": 1585505610172, "val": "Boeuf aux Mangues Sauvages"
+	},
+	"ga|cuke": {
+		"name": "Cucumber Salad", "servings": "4", "servingUnit": "servings",
+		"author": "Heather", "source": "https://edibleun.wordpress.com/2016/05/23/trip-28-gabon-africa-gabonese-mustard-lemon-chicken-cucumber-salad-baked-bananas-gabon-french-bread/",
+		"prepTime": "20m", "cookTime": "", "totalTime": "20m",
+		"notes": "",
+		"tags": ["G", "Gabon"],
+		"ingredience": [
+			{ "amount": "1", "unit": "", "ingredient": "large sweet onion" },
+			{ "amount": "2", "unit": "", "ingredient": "medium tomatoes" },
+			{ "amount": "1", "unit": "", "ingredient": "cucumber" },
+			{ "amount": "1", "unit": "", "ingredient": "parsley bunch" },
+			{ "amount": "1/2", "unit": "", "ingredient": "mint bunch" },
+			{ "amount": "2", "unit": "tbsp", "ingredient": "olive oil" },
+			{ "amount": "1/2", "unit": "", "ingredient": "lemon, juiced" },
+			{ "amount": "1", "unit": "tbsp", "ingredient": "ground cumin" },
+			{ "amount": "", "unit": "toTaste", "ingredient": "salt and pepper" }
+		],
+		"steps": [
+			"Peel and seed the cucumber, then slice the tomatoes, onions, and cucumber very thinly.",
+			"Finely chop the parsley and mint. Combine with the vegetables in a bowl.",
+			"Mix olive oil, lemon juice, and seasonings, then pour over the veggies and toss to combine."
+		],
+		"important": false, "date": 1585506259676, "val": "Cucumber Salad"
+	},
+	"gm|dibi": {
+		"name": "Dibi", "servings": "4", "servingUnit": "servings",
+		"author": "Dada’s FoodCrave Kitchen", "source": "https://www.youtube.com/watch?v=bJPwzdTf4a4",
+		"prepTime": "5m", "cookTime": "20m", "totalTime": "25m",
+		"notes": "",
+		"tags": ["G", "Gambia"],
+		"ingredience": [
+			{ "amount": "1", "unit": "lb", "ingredient": "goat/lamb/cow meat (cubed)" },
+			{ "amount": "2", "unit": "", "ingredient": "onions" },
+			{ "amount": "1", "unit": "tbsp", "ingredient": "cooking oil" },
+			{ "amount": "2", "unit": "tsp", "ingredient": "liquid smoke" },
+			{ "amount": "", "unit": "toTaste", "ingredient": "cayenne pepper" },
+			{ "amount": "", "unit": "toTaste", "ingredient": "salt" },
+			{ "amount": "", "unit": "toTaste", "ingredient": "black pepper" },
+			{ "amount": "", "unit": "toTaste", "ingredient": "yellow mustard" },
+			{ "amount": "2", "unit": "", "ingredient": "Maggi/Jumbo cubes" }
+		],
+		"steps": [
+			"Slice onions into thick ~[1/2 inch] cuts, and then push the layers apart to get thick onion rings.",
+			"Lightly oil a cast-iron grill pan and heat it to medium-high heat.",
+			"Add meat to pan and begin cooking. Add the liquid smoke and stir to combine.",
+			"Halfway through grilling, add salt to taste and stir.",
+			"Near the end of cooking, add all remaining seasonings except mustard and the onions.",
+			"Continue cooking and stirring until the onion is softer but still has a crunch to it.",
+			"After the onion has softened, add in the mustard and stir to combine."
+		],
+		"important": false, "date": 1585506259676, "val": "Dibi"
+	},
+	"gm|tapalapa": {
+		"name": "Tapalapa", "servings": "3", "servingUnit": "loaves",
+		"author": "Mike Benayoun", "source": "https://www.196flavors.com/gambia-tapalapa/",
+		"prepTime": "10m", "cookTime": "15m", "totalTime": "2h10m",
+		"notes": "",
+		"tags": ["G", "Gambia"],
+		"ingredience": [
+			{ "amount": "1 1/4", "unit": "cup", "ingredient": "all-purpose flour" },
+			{ "amount": "2/3", "unit": "cup", "ingredient": "millet flour" },
+			{ "amount": "1 1/2", "unit": "cup", "ingredient": "yellow corn flour" },
+			{ "amount": "1/3", "unit": "cup", "ingredient": "cowpea flour" },
+			{ "amount": "1 1/2", "unit": "cup", "ingredient": "water water" },
+			{ "amount": "3", "unit": "tsp", "ingredient": "active dry yeast" },
+			{ "amount": "1", "unit": "tsp", "ingredient": "salt" },
+			{ "amount": "", "unit": "none", "ingredient": "cornmeal (optional)" }
+		],
+		"steps": [
+			"Mix the flours together in the bowl of a stand-in mixer. Add in salt, yeast, and water. Mix well and knead the dough for a few minutes until smooth and elastic.",
+			"Place the ball of dough in a greased bowl and cover with a clean cloth. Let it rise in a warm place until doubled, about 1 hour.",
+			"Cut the dough into 3 pieces and form baguette loaves. Place them on a baking sheet, optionally sprinkled with cornmeal, or lined with parchment paper. Let them rise for 30 minutes. Make one long shallow cut on top of each loaf with a knife.",
+			"Preheat oven to [450F], and bake tapalapa for 15 minutes until golden brown."
+		],
+		"important": false, "date": 1598726863502, "val": "Tapalapa"
+	},
+	"ge|khachapuri": {
+		"name": "Adjarian Khachapuri", "servings": "2", "servingUnit": "boats",
+		"author": "Georgian cooking with Nino", "source": "https://www.youtube.com/watch?v=8ROCm1ZD92Y",
+		"prepTime": "20m", "cookTime": "17m", "totalTime": "2h7m",
+		"notes": "",
+		"tags": ["G", "Georgia"],
+		"ingredience": [
+			{ "group": "Dough", "amount": "300", "unit": "g", "ingredient": "all-purpose flour" },
+			{ "group": "Dough", "amount": "10", "unit": "g", "ingredient": "active dry yeast" },
+			{ "group": "Dough", "amount": "1/2", "unit": "tsp", "ingredient": "salt" },
+			{ "group": "Dough", "amount": "1/2", "unit": "tsp", "ingredient": "sugar" },
+			{ "group": "Dough", "amount": "2/3", "unit": "cup", "ingredient": "warm milk" },
+			{ "group": "Dough", "amount": "1/3", "unit": "cup", "ingredient": "warm water" },
+			{ "group": "Dough", "amount": "2", "unit": "tsp", "ingredient": "vegetable oil" },
+			{ "group": "Filling", "amount": "200", "unit": "g", "ingredient": "imereti or feta cheese" },
+			{ "group": "Filling", "amount": "300", "unit": "g", "ingredient": "sulguni or mozzarella cheese" },
+			{ "group": "Topping", "amount": "2", "unit": "tbsp", "ingredient": "butter" },
+			{ "group": "Topping", "amount": "2", "unit": "", "ingredient": "eggs" }
+		],
+		"steps": [
+			"To a bowl, add warm milk, warm water, yeast, salt, sugar, and oil. Mix to combine.",
+			"Add liquid to flour, stir and knead for several minutes into a dough. Let sit for 1.5-2 hours.",
+			"Punch down dough and knead a bit more. Split into [2] balls.",
+			"For each boat, flatten and roll into a rectangular shape. Add some cheese along the longer sides of the dough rectangle, then fold the edges of the dough over the cheese.",
+			"Bring the corners on the shorter sides together and then twist together a few times, forming the boat shape. Fill the center with cheese.",
+			"Cook the boats for 15 minutes in a pre-heated [250C] oven.",
+			"Remove from oven, stir a hole into the middle of each boat, and crack an egg into each hole, then return to the oven for another 2 minutes.",
+			"Drop a slice of butter onto the top of each boat and serve."
+		],
+		"important": false, "date": 1585506259676, "val": "Adjarian Khachapuri"
+	},
+	"ge|badrijani": {
+		"name": "Badrijani Nigvzit", "servings": "12", "servingUnit": "rolls",
+		"author": "Jenny Holm", "source": "https://georgiantable.com/2014/06/08/georgian-eggplant-badrijani-nigvzit/",
+		"prepTime": "20m", "cookTime": "10m", "totalTime": "1h30m",
+		"notes": "",
+		"tags": ["G", "Georgia"],
+		"ingredience": [
+			{ "amount": "12", "unit": "", "ingredient": "Chinese eggplants" },
+			{ "amount": "1", "unit": "cup", "ingredient": "walnuts" },
+			{ "amount": "1", "range": "2", "unit": "", "ingredient": "garlic cloves" },
+			{ "amount": "1/2", "unit": "tsp", "ingredient": "white wine or tarragon vinegar" },
+			{ "amount": "1", "unit": "tsp", "ingredient": "ground coriander" },
+			{ "amount": "1/4", "unit": "tsp", "ingredient": "ground fennugreek, or twice as much utskho suneli/blue fennugreek" },
+			{ "amount": "1/4", "unit": "tsp", "ingredient": "red pepper flakes or cayenne pepper" },
+			{ "amount": "1/4", "unit": "tsp", "ingredient": "kosher salt" },
+			{ "amount": "1/2", "unit": "cup", "ingredient": "water" },
+			{ "amount": "", "unit": "toTaste", "ingredient": "pomegranate seeds, cilantro, or thinly-sliced onions, as a topping" },
+			{ "amount": "2", "range": "3", "unit": "tsp", "ingredient": "frying oil" }
+		],
+		"steps": [
+			"Blend together the walnuts, garlic, spices, vinegar and water in a food processor until smooth. Store in refrigerator until needed.",
+			"Wash eggplants and cut their tops off. Slice lengthwise into [1/2 inch] thick slices.",
+			"Salt the eggplant slices and let stand for an hour, then press out the dark juices. Rinse and pat dry.",
+			"Heat oil in a skillet over medium-high heat. Cook eggplant slices until soft and brown on both sides, then remove from heat. Repeat until all slices are fried.",
+			"After the slices have cooled, spread a layer of filling on each slice and roll them up. Add desired topping and serve."
+		],
+		"important": false, "date": 1585506259676, "val": "Badrijani Nigvzit"
+	},
+	"de|kartoffelklosse": {
+		"name": "Kartoffelklöße", "servings": "12", "servingUnit": "servings",
+		"author": "German Culture.com.ua", "source": "https://germanculture.com.ua/",
+		"prepTime": "30m", "cookTime": "10m", "totalTime": "40m",
+		"notes":"",
+		"tags": ["G", "Germany"],
+		"ingredience":[
+			{ "ingredient":"butter", "amount":"2", "unit":"tbsp" },
+			{ "ingredient":"white bread, cubed", "amount":"2","unit":"cup" },
+			{ "ingredient":"flour","amount":"1/2","unit":"cup" },
+			{ "ingredient":"boiled potatoes, peeled","amount":"900","unit":"g" },
+			{ "ingredient":"egg", "amount":"1", "unit":"" },
+			{ "ingredient":"salt", "amount":"1", "unit":"tsp" },
+			{ "ingredient":"ground nutmeg", "amount":"1/8", "unit":"tsp" },
+			{ "ingredient":"pepper", "amount":"", "unit":"toTaste" },
+			{ "ingredient":"dill", "amount":"", "unit":"toTaste" }
+		],
+		"steps":[
+			"Melt butter in a skillet, then sauté bread until browned. Remove from pan and set aside.",
+			"Mash potatoes and combine with flour, egg, and seasonings, then divide and roll into [24] balls, flouring your hands to prevent sticking.",
+			"Lower a few dumplings at a time into a pot of boiling water. Cook for an additional 3-5 minutes after they rise to the surface, then remove from the water with a slotted spoon."
+		],
+		"important": false, "date":1600921975060, "val": "Kartoffelklöße"
+	},
+	"de|pretzel": {
+		"name": "Bavarian Pretzels", "servings": 6, "servingUnit": "pretzels",
+		"author": "Sean Finch", "source": "https://www.hauntedbees.com/food/world.html",
+		"prepTime": "45m", "cookTime": "24m", "totalTime": "9-10hr",
+		"notes": "It is recommended to use a mixture of baking soda and water instead of lye if you do not have adequate protection and equipment. You can find recipes for baked baking soda solutions online.",
+		"tags": ["G", "Germany"],
+		"ingredience": [
+			{ "ingredient": "water, around ~110ºF/44ºC", "amount": "227", "unit": "mL", "group": "dough" },
+			{ "ingredient": "pislner beer, room temp", "amount": "227", "unit": "mL", "group": "dough" },
+			{ "ingredient": "instant yeast", "amount": "12", "unit": "g", "group": "dough" },
+			{ "ingredient": "barley malt syrup", "amount": "18", "unit": "g", "group": "dough" },
+			{ "ingredient": "unsalted butter, softened", "amount": "27", "unit": "g", "group": "dough" },
+			{ "ingredient": "bread flour", "amount": "862", "unit": "g", "group": "dough" },
+			{ "ingredient": "sea salt", "amount": "20","unit": "g", "group": "dough" },
+			{ "ingredient": "water", "amount": "2268", "unit": "mL", "group": "lye mixture" },
+			{ "ingredient": "lye", "amount": "94", "unit": "g", "group": "lye mixture" },
+			{ "ingredient": "coarse salt", "amount": "", "unit": "toTaste", "group": "topping" }
+		],
+		"steps": [
+			"Mix water, yeast, and syrup. Wait 7-10 minutes for the yeast to start foaming.",
+			"Add flour, beer, butter and salt. Mix to combine.",
+			"Knead dough for 10-20 minutes until an elastic dough forms.",
+			"Let dough rest at room temperature for 20-30 minutes, then place in an oiled bowl, covered in plastic wrap, to rise overnight in the fridge.",
+			"Divide into 6 balls, then roll them out into ~[30cm] ropes that are thicker in the middle. Once rolled out, fold into a \"U\" shape, fold one side over the other, fold over a second time, then move both ends over the bottom of the \"U\" and tuck the ends under the thickest part of the dough.",
+			"Let the dough rise for another 20-30 minutes, then refrigerate until the lye mixture is ready.",
+			"With gloves and goggles on, fill a glass bowl with water, then slowly pour in the lye. Carefully stir until combined and the mixture is not too cloudy.",
+			"Remove the pretzels from the fridge and, one at a time, dunk them in the lye mixture, letting them stay in the mixture for 10 seconds on each side. Remove the pretzels and place them on a glass baking tray or on parchment paper.",
+			"Sprinkle coarse salt on the pretzels, then carefully cut a slit across the thickest parts of the pretzels at their bottoms.",
+			"Bake at [425F] for 22-24 minutes or until they turn a deep golden brown color."
+		],
+		"important": false, "date": 1602912752497, "val": "Bavarian Pretzels"
+	},
+	"tm|template": {
+		"name": "arf", "servings": "1", "servingUnit": "servings",
+		"author": "eggbiu", "source": "",
+		"prepTime": "20m", "cookTime": "", "totalTime": "20m",
+		"notes": "",
+		"tags": ["G", "Gabon"],
+		"ingredience": [
+			{ "amount": "1", "unit": "tbsp", "ingredient": "" },
+			{ "amount": "2", "unit": "toTaste", "ingredient": "medium tomatoes" }
+		],
+		"steps": [
+			"."
+		],
+		"important": false, "date": 1585506259676, "val": "arf"
+	}
+}
