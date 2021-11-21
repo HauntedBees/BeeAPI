@@ -21,6 +21,7 @@
  * @see https://github.com/HauntedBees/BeeAPI
  */
 const CONFIG_PATH = "../../protected/config.ini";
+//const CONFIG_PATH = "config.ini";
 function AssArrayToObject(string $className, array $arr, bool $callConstructor = true) {
     $class = new ReflectionClass($className);
     $obj = ($callConstructor ? $class->newInstance() : $class->newInstanceWithoutConstructor());

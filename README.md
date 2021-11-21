@@ -59,3 +59,6 @@ A base controller class that inherits from **BeeController** and requires a vali
 Adds external OAuth provider integration into **BeeAuth**. Currently only Twitter integration is built in.
 ### API.php
 Takes the `controller`, `method`, and `param` querystring parameters and executes the relevant method after ensuring that all parameters are the correct types (for both custom class objects and primitives like `int` and `string`) and that the controller and method actually exist. Autoloading is used based on the Module conventions described above to prevent the need to manually reference controllers.
+
+### Foodportal
+This is just code for my [Food Portal](https://www.hauntedbees.com/food/) site; it is unrelated to the actual API. You can safely delete it from your pull.
