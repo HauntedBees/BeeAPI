@@ -23,7 +23,7 @@
 const BEEROLE_ADMIN = 1;
 class BeeSecureController extends BeeController {
     protected BeeUserToken $token;
-    public function __construct(string $db = "", int $enforcedRole = 0) {
+    public function __construct(string $db = "", int $enforcedRole = 0, bool $useLogging = false) {
         $auth = new BeeAuth();
         try {
             $this->token = $auth->GetToken("BeeUserToken");
@@ -32,7 +32,7 @@ class BeeSecureController extends BeeController {
             throw $ex;
         }
         if($enforcedRole > 0 && !$this->HasRole($enforcedRole)) { throw new Exception("Access denied."); } // todo: this but better
-        parent::__construct($db);
+        parent::__construct($db, $useLogging);
     }
     protected function HasRole(int $roleBit):bool { return ($this->token->role & $roleBit) > 0; }
 }

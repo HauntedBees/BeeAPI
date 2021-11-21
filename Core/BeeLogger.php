@@ -20,28 +20,21 @@
  * 
  * @see https://github.com/HauntedBees/BeeAPI
  */
-require_once "BeeResponse.php";
 require_once "BeeDB.php";
-require_once "BeeLogger.php";
-class BeeController {
+class BeeLogger {
 	public BeeDB $db;
-	public BeeLogger $log;
-	public BeeResponse $response;
-    public function __construct(string $db = "", bool $useLogging = false) {
-		$this->response = new BeeResponse();
-		$this->db = new BeeDB($db);
-		if($useLogging) { $this->log = new BeeLogger(); }
-	}
-	protected function AssertRequired(string $str) { if(strlen(trim($str)) === 0) { throw new Exception("Required value not provided."); } }
-	protected function AssertLength(string $str, int $len) { if(strlen($str) > $len) { throw new Exception("Value '$str' exceeds maximum length of $len"); } }
-	protected function AssertIntArray(array $arr) {
-		foreach($arr as $k=>$v) {
-			if(!is_int($v)) { throw new Exception("Value '$v' found in a list of numbers."); }
-		}
-	}
-	protected function GetConfigInfo(string $group, string $key):string {
-        $ini = parse_ini_file(CONFIG_PATH, true);
-        return $ini[$group][$key];
-	}
+	public function __construct() { $this->db = new BeeDB("logging"); }
+    public function LogError(string $msg):void { $this->InnerLog("errorlog", $msg); }
+    public function LogInfo(string $msg):void { $this->InnerLog("info", $msg); }
+    private function InnerLog(string $table, string $msg):void {
+        $now = new DateTime();
+        $res = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
+        $this->db->ObjectInsert($table, [
+            "logtime" => $now->getTimestamp(),
+            "sourceclass" => $res[1]["class"],
+            "sourcefunc" => $res[1]["function"],
+            "log" => $msg
+        ]);
+    }
 }
 ?>
