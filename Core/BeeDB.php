@@ -124,16 +124,53 @@ class BeeDB {
         $res = intval($cmd->fetch(PDO::FETCH_NUM)[0]);
         return $res > 0;
     }
-    public function CreateInClause(array $arr):array {
+    public function CreateInClause(array $arr, string $prefix = "l"):array {
         $params = [];
         $sql = [];
         foreach($arr as $k=>$v) {
-            $params["l$k"] = $v;
-            $sql[] = ":l$k";
+            $params["$prefix$k"] = $v;
+            $sql[] = ":$prefix$k";
         }
         return [
             "paramsObj" => $params,
             "inClause" => implode(", ", $sql)
         ];
     }
+
+    public function ObjectUpdate(string $tableName, $obj, array $ignoreColumns = []):void {
+        $sql = "UPDATE $tableName SET ";
+        $bits = [];
+        $params = [];
+        $array = is_array($obj) ? $obj : get_object_vars($obj);
+        foreach($array as $key => $value) {
+            if($key === "id" || in_array($key, $ignoreColumns)) { continue; }
+            if(is_bool($value)) { # PDO shits itself trying to insert into a BIT(1) column without this
+                $bits[] = "$key = ".($value?1:0);
+            } else {
+                $bits[] = "$key = :$key";
+                $params[$key] = is_string($value) ? trim($value) : $value;
+            }
+        }
+        $sql .= implode(", ", $bits)." WHERE id = ".$array["id"];
+        $this->ExecuteNonQuery($sql, $params);
+    }
+    public function ObjectInsert(string $tableName, $obj, array $ignoreColumns = []):int {
+        $sql = "INSERT INTO $tableName (";
+        $keyBits = [];
+        $valueBits = [];
+        $params = [];
+        $array = is_array($obj) ? $obj : get_object_vars($obj);
+        foreach($array as $key => $value) {
+            if($key === "id" || in_array($key, $ignoreColumns)) { continue; }
+            $keyBits[] = "$key";
+            if(is_bool($value)) { # PDO shits itself trying to insert into a BIT(1) column without this
+                $valueBits[] = ($value?1:0);
+            } else {
+                $valueBits[] = ":$key";
+                $params[$key] = is_string($value) ? trim($value) : $value;
+            }
+        }
+        $sql .= implode(", ", $keyBits).") VALUES (".implode(", ", $valueBits).")";
+        return $this->InsertAndReturnID($sql, $params);
+    } 
 }
