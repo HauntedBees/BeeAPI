@@ -22,7 +22,7 @@
  */
 require_once "BeeDB.php";
 class BeeLogger {
-	public BeeDB $db;
+	private BeeDB $db;
 	public function __construct() { $this->db = new BeeDB("logging"); }
     public function LogError(string $msg):void { $this->InnerLog("errorlog", $msg); }
     public function LogInfo(string $msg):void { $this->InnerLog("info", $msg); }

@@ -46,7 +46,9 @@ Controllers and methods follow naming conventions - a `GET` request to `API.php?
 ## parts
 
 ###  BeeDB
-A class for doing database operations on a MySQL database. 
+A class for doing database operations on a MySQL database.
+### BeeCache
+A class for basic caching, with support for caching data into JSON files in the `CACHE_PATH`, which much be specified in the same way `CONFIG_PATH` is. Don't forget to `chmod` the folder so the API can access it!
 ### BeeResponse
 A class for returning proper HTTP responses for JSON data.
 ### BeeAuth
