@@ -21,7 +21,11 @@
  * @see https://github.com/HauntedBees/BeeAPI
  */
 class FoodportalController extends BeeController {
-    public function __construct() { parent::__construct("portal"); }
+    private BeeCache $cache;
+    public function __construct() {
+        parent::__construct("portal");
+        $this->cache = new BeeCache(10080, $this->db); // one week cache
+    }
     public function PostBeeLogin(BeeCredentials $credentials) {
         try {
             $auth = new BeeAuth();
@@ -218,18 +222,32 @@ class FoodportalController extends BeeController {
         if(count($seasoning) === 0) { return $this->response->Error("Seasoning not found."); }
         return $this->response->OK($seasoning[0]);
     }
-    private function SeasoningsQuery(string $whereClause, array $whereParams) {
+    /** @return ListSeasoning[] */
+    public function GetFullSeasoningList() {
+        return $this->response->OK($this->cache->GetDBObjects("spice_list", "ListSeasoning", "SELECT type, name FROM seasoning ORDER BY name ASC"));
+    }
+    /** @return Seasoning[] */
+    public function GetRandomSeasonings() {
+        return $this->response->OK($this->SeasoningsQuery("ORDER BY RAND() LIMIT 10", [], false, false));
+    }
+    private function SeasoningsQuery(string $whereClause, array $whereParams, bool $includeLinks = true, bool $cache = true) {
+        $key = ($includeLinks?"full_":"partial_")."seasoning_".preg_replace("/[\W]/", "", $whereClause);
+        foreach($whereParams as $k=>$v) { $key .= "_$k_$v"; }
+        if($cache) {
+            $cachedVal = $this->cache->GetValue($key);
+            if($cachedVal !== null) { return $cachedVal; }
+        }
         $seasonings = $this->db->GetObjects("Seasoning", "
-            SELECT s.id, s.name, s.origin, s.description, s.emoji,
-                CASE
-                    WHEN s.type = 0 THEN 'herb'
-                    WHEN s.type = 1 THEN 'spice'
-                    WHEN s.type = 2 THEN 'blend'
-                END AS type, s.species, s.imagedesc, s.imagename, s.imageauthor, s.imageurl, s.authorurl,
-                l.code AS license, l.url AS licenseurl
-            FROM seasoning s
-                INNER JOIN license l ON s.license = l.id
-            $whereClause", $whereParams);
+        SELECT s.id, s.name, s.origin, s.description, s.emoji,
+            CASE
+                WHEN s.type = 0 THEN 'herb'
+                WHEN s.type = 1 THEN 'spice'
+                WHEN s.type = 2 THEN 'blend'
+            END AS type, s.species, s.imagedesc, s.imagename, s.imageauthor, s.imageurl, s.authorurl,
+            l.code AS license, l.url AS licenseurl
+        FROM seasoning s
+            INNER JOIN license l ON s.license = l.id
+        $whereClause", $whereParams);
         foreach($seasonings as $s) {
             $s->synonyms = $this->db->GetStrings("SELECT synonym FROM seasoning_synonym WHERE seasoning = :i", ["i" => $s->id]);
             $s->dishes = $this->db->GetStrings("
@@ -247,30 +265,33 @@ class FoodportalController extends BeeController {
                 FROM seasoning_ingredient si
                     INNER JOIN ingredient i ON si.ingredient = i.id
                 WHERE si.seasoning = :i", ["i" => $s->id]);
-            // TODO: combine seasoning_pairs and seasoning_related with a type column?
-            $s->pairsWith = $this->db->GetStrings("
-                SELECT s.name
-                FROM seasoning_pairs sp
-                    INNER JOIN seasoning s ON sp.seasoning2 = s.id
-                WHERE sp.seasoning1 = :i", ["i" => $s->id]);
-                $s->relatedSpices = $this->db->GetStrings("
-                SELECT s.name
-                FROM seasoning_related sr
-                    INNER JOIN seasoning s ON sr.relatedSeasoning = s.id
-                WHERE sr.seasoning = :i", ["i" => $s->id]);
+            if($includeLinks) { // these are probably wrong
+                // TODO: combine seasoning_pairs and seasoning_related with a type column?
+                $s->pairsWith = $this->SeasoningsQuery("
+                        INNER JOIN seasoning_pairs sp ON sp.seasoning2 = s.id
+                    WHERE sp.seasoning1 = :i", ["i" => $s->id], false);
+                $s->relatedSpices = $this->SeasoningsQuery("
+                        INNER JOIN seasoning_related sr ON sr.relatedSeasoning = s.id
+                    WHERE sr.seasoning = :i", ["i" => $s->id], false);
+            } else {
+                $s->pairsWith = [];
+                $s->relatedSpices = [];
+            }
             $s->recipes = $this->db->GetDataTable("
                 SELECT sr.name, sr.url, 0 AS local
                 FROM seasoning_recipe sr
                 WHERE sr.seasoning = :i
                 UNION ALL
                 SELECT r.name, r.url, 1 AS local
-                FROM seasoning_ingredient si
-                    INNER JOIN recipe_ingredient ri ON si.ingredient = ri.ingredient
+                FROM ingredient i
+                    INNER JOIN recipe_ingredient ri ON i.id = ri.ingredient
                     INNER JOIN recipe r ON ri.recipe = r.id
-                WHERE si.seasoning = :i
-                ORDER BY local ASC, name ASC", ["i" => $s->id]);
+                WHERE i.name = :n
+                ORDER BY local ASC, name ASC", ["i" => $s->id, "n" => $s->name]);
             unset($s->id);
         }
+
+        $this->cache->SetValue($key, $seasonings);
         return $seasonings;
     }
 #endregion

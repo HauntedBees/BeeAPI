@@ -131,8 +131,8 @@ class Seasoning {
     public array $dishes; // string[]
     public array $flavors; // string[]
     public array $foods; // string[]
-    public array $pairsWith; // string[]
-    public array $relatedSpices; // string[]
+    public array $pairsWith; // Seasoning[]
+    public array $relatedSpices; // Seasoning[]
     public array $recipes; // { name: string, url: string, local: bool }[]
     public string $imagedesc;
     public string $imagename;
@@ -141,6 +141,10 @@ class Seasoning {
     public string $authorurl;
     public string $license;
     public string $licenseurl;
+}
+class ListSeasoning {
+    public int $type;
+    public string $name;
 }
 #endregion
 ?>
