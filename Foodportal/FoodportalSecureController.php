@@ -206,7 +206,7 @@ class FoodportalSecureController extends BeeSecureController {
         return $this->response->OK($this->db->GetObjects("AdminCountryNeighbor", "
             SELECT * FROM (
                 SELECT id, cKey AS countryCode, name, 0 AS shell FROM country
-                UNION
+                UNION ALL
                 SELECT id, countryCode, name, 1 AS shell FROM shell_country
             ) T
             WHERE T.name LIKE :query OR T.countryCode LIKE :query", ["query" => "%$query%"]));

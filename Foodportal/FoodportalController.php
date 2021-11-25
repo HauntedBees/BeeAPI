@@ -50,13 +50,13 @@ class FoodportalController extends BeeController {
             "countriesWithCurrentLetter" => $this->db->GetInt("
                 SELECT COUNT(*) FROM (
                     SELECT name FROM country WHERE LEFT(IFNULL(realFirstLetter, name), 1) = :l
-                    UNION
+                    UNION ALL
                     SELECT name FROM shell_country WHERE LEFT(name, 1) = :l AND name <> 'None'
                 ) T", ["l" => $currentLetter]),
             "totalCountries" => $this->db->GetInt("
                 SELECT COUNT(*) FROM (
                     SELECT name FROM country
-                    UNION
+                    UNION ALL
                     SELECT name FROM shell_country WHERE name <> 'None'
                 ) T"),
             "countriesDown" => $this->db->GetInt("SELECT COUNT(*) FROM country"),
