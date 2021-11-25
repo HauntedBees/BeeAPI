@@ -33,12 +33,13 @@ class FoodportalController extends BeeController {
         }
     }
 
+#region "Areund the World"
     public function GetMetadata() {
         return $this->response->OK([
             "letters" => $this->db->GetStrings("SELECT DISTINCT LEFT(IFNULL(realFirstLetter, name), 1) FROM country ORDER BY IFNULL(realFirstLetter, name) ASC"),
             "countries" => $this->db->GetDataTable("SELECT ckey, name, LEFT(IFNULL(realFirstLetter, name), 1) AS firstLetter, focusArea FROM country ORDER BY IFNULL(realFirstLetter, name) ASC"),
             "diets" => $this->db->GetObjects("NamedEmoji", "SELECT id, name, emoji FROM diet ORDER BY name ASC"),
-            "dishes" => $this->db->GetObjects("NamedEmoji", "SELECT id, name, emoji FROM dish ORDER BY name ASC")
+            "dishes" => $this->db->GetObjects("NamedEmoji", "SELECT id, name, emoji FROM dish WHERE spiceOnly = 0 ORDER BY name ASC")
         ]);
     }
     public function GetHomepage() {
@@ -72,12 +73,19 @@ class FoodportalController extends BeeController {
 
     /** @return Recipe[] */
     public function GetSearchResults(string $q) {
-        return $this->response->OK($this->GetFoods("
+        if(substr($q, 0, 4) === "ing:") {
+            return $this->response->OK($this->GetFoods("
+            LEFT JOIN recipe_ingredient ri ON r.id = ri.recipe
+            LEFT JOIN ingredient i ON ri.ingredient = i.id
+        WHERE i.name = :q", ["q" => substr($q, 4)]));
+        } else {
+            return $this->response->OK($this->GetFoods("
             LEFT JOIN recipe_ingredient ri ON r.id = ri.recipe
             LEFT JOIN ingredient i ON ri.ingredient = i.id
         WHERE i.name LIKE :q
             OR r.name LIKE :q
             OR r.description LIKE :q", ["q" => "%$q%"]));
+        }
     }
     /** @return Recipe[] */
     public function GetFilterResults(array $goodDiets, array $badDiets, array $goodDishes, array $badDishes) {
@@ -135,10 +143,11 @@ class FoodportalController extends BeeController {
         WHERE ".implode(" AND ", $whereClauseParts), $whereParams));
     }
 
+    // these two might not be used anymore
     /** @return NamedEmoji[] */
     public function GetDiets() { return $this->response->OK($this->db->GetObjects("NamedEmoji", "SELECT name, emoji FROM diet ORDER BY name ASC")); }
     /** @return NamedEmoji[] */
-    public function GetDishes() { return $this->response->OK($this->db->GetObjects("NamedEmoji", "SELECT name, emoji FROM dish ORDER BY name ASC")); }
+    public function GetDishes() { return $this->response->OK($this->db->GetObjects("NamedEmoji", "SELECT name, emoji FROM dish WHERE spiceOnly = 0 ORDER BY name ASC")); }
 
     /** @return CountrySummary[] */
     public function GetCountries() { // TODO: change realFirstLetter to Sort name or something
@@ -202,5 +211,68 @@ class FoodportalController extends BeeController {
             $whereClause
             $orderBy", $params);
     }
+#endregion
+#region "Spiceapedia"
+    public function GetSeasoning(string $name) {
+        $seasoning = $this->SeasoningsQuery("WHERE s.name = :n", ["n" => $name]);
+        if(count($seasoning) === 0) { return $this->response->Error("Seasoning not found."); }
+        return $this->response->OK($seasoning[0]);
+    }
+    private function SeasoningsQuery(string $whereClause, array $whereParams) {
+        $seasonings = $this->db->GetObjects("Seasoning", "
+            SELECT s.id, s.name, s.origin, s.description, s.emoji,
+                CASE
+                    WHEN s.type = 0 THEN 'herb'
+                    WHEN s.type = 1 THEN 'spice'
+                    WHEN s.type = 2 THEN 'blend'
+                END AS type, s.species, s.imagedesc, s.imagename, s.imageauthor, s.imageurl, s.authorurl,
+                l.code AS license, l.url AS licenseurl
+            FROM seasoning s
+                INNER JOIN license l ON s.license = l.id
+            $whereClause", $whereParams);
+        foreach($seasonings as $s) {
+            $s->synonyms = $this->db->GetStrings("SELECT synonym FROM seasoning_synonym WHERE seasoning = :i", ["i" => $s->id]);
+            $s->dishes = $this->db->GetStrings("
+                SELECT d.name
+                FROM seasoning_dish sd
+                    INNER JOIN dish d ON sd.dish = d.id
+                WHERE sd.seasoning = :i", ["i" => $s->id]);
+            $s->flavors = $this->db->GetStrings("
+                SELECT f.name
+                FROM seasoning_flavor sf
+                    INNER JOIN flavor f ON sf.flavor = f.id
+                WHERE sf.seasoning = :i", ["i" => $s->id]);
+            $s->foods = $this->db->GetStrings("
+                SELECT i.name
+                FROM seasoning_ingredient si
+                    INNER JOIN ingredient i ON si.ingredient = i.id
+                WHERE si.seasoning = :i", ["i" => $s->id]);
+            // TODO: combine seasoning_pairs and seasoning_related with a type column?
+            $s->pairsWith = $this->db->GetStrings("
+                SELECT s.name
+                FROM seasoning_pairs sp
+                    INNER JOIN seasoning s ON sp.seasoning2 = s.id
+                WHERE sp.seasoning1 = :i", ["i" => $s->id]);
+                $s->relatedSpices = $this->db->GetStrings("
+                SELECT s.name
+                FROM seasoning_related sr
+                    INNER JOIN seasoning s ON sr.relatedSeasoning = s.id
+                WHERE sr.seasoning = :i", ["i" => $s->id]);
+            $s->recipes = $this->db->GetDataTable("
+                SELECT sr.name, sr.url, 0 AS local
+                FROM seasoning_recipe sr
+                WHERE sr.seasoning = :i
+                UNION ALL
+                SELECT r.name, r.url, 1 AS local
+                FROM seasoning_ingredient si
+                    INNER JOIN recipe_ingredient ri ON si.ingredient = ri.ingredient
+                    INNER JOIN recipe r ON ri.recipe = r.id
+                WHERE si.seasoning = :i
+                ORDER BY local ASC, name ASC", ["i" => $s->id]);
+            unset($s->id);
+        }
+        return $seasonings;
+    }
+#endregion
 }
 ?>

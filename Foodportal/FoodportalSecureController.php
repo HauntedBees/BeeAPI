@@ -36,7 +36,7 @@ class FoodportalSecureController extends BeeSecureController {
     /** @return IdNamePair[] */
     public function GetDiets() { return $this->response->OK($this->db->GetObjects("IdNamePair", "SELECT id, name FROM diet ORDER BY name ASC")); }
     /** @return IdNamePair[] */
-    public function GetDishes() { return $this->response->OK($this->db->GetObjects("IdNamePair", "SELECT id, name FROM dish ORDER BY name ASC")); }
+    public function GetDishes() { return $this->response->OK($this->db->GetObjects("IdNamePair", "SELECT id, name FROM dish WHERE spiceOnly = 0 ORDER BY name ASC")); }
     /** @return Country */
     public function GetCountry(string $countryCode) { return $this->response->OK($this->GetCountryInner($countryCode)); }
 

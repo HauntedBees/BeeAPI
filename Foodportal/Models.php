@@ -20,6 +20,7 @@
  * 
  * @see https://github.com/HauntedBees/BeeAPI
  */
+#region "Areund the World"
 class NamedEmoji {
     public int $id;
     public string $name;
@@ -116,4 +117,30 @@ class AdminDietInfo {
     public string $description;
     public bool $optional;
 }
+#endregion
+#region "Spiceapedia"
+class Seasoning {
+    public int $id;
+    public string $name;
+    public array $synonyms; // string[]
+    public string $origin;
+    public string $description;
+    public string $emoji;
+    public string $species;
+    public string $type;
+    public array $dishes; // string[]
+    public array $flavors; // string[]
+    public array $foods; // string[]
+    public array $pairsWith; // string[]
+    public array $relatedSpices; // string[]
+    public array $recipes; // { name: string, url: string, local: bool }[]
+    public string $imagedesc;
+    public string $imagename;
+    public string $imageauthor;
+    public string $imageurl;
+    public string $authorurl;
+    public string $license;
+    public string $licenseurl;
+}
+#endregion
 ?>
