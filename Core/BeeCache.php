@@ -67,6 +67,10 @@ class BeeCache {
 	public function SetValue(string $key, $obj):void {
 		file_put_contents($this->GetPath($key), json_encode($obj));
 	}
-	private function GetPath(string $key):string { return CACHE_PATH.$key.".cache"; }
+	private function GetPath(string $key):string {
+		$key = str_replace(" ", "", $key);
+		if(strlen($key) > 100) { $key = substr($key, 0, 50)."__".substr($key, -50); }
+		return CACHE_PATH.$key.".cache";
+	}
 }
 ?>
