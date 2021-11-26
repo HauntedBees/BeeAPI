@@ -133,6 +133,7 @@ class Seasoning {
     public array $foods; // string[]
     public array $pairsWith; // Seasoning[]
     public array $relatedSpices; // Seasoning[]
+    public array $components; // Seasoning[]
     public array $recipes; // { name: string, url: string, local: bool }[]
     public string $imagedesc;
     public string $imagename;

@@ -310,17 +310,25 @@ class FoodportalController extends BeeController {
                 FROM seasoning_ingredient si
                     INNER JOIN ingredient i ON si.ingredient = i.id
                 WHERE si.seasoning = :i", ["i" => $s->id]);
-            if($includeLinks) { // these are probably wrong
-                // TODO: combine seasoning_pairs and seasoning_related with a type column?
+            if($includeLinks) {
                 $s->pairsWith = $this->SeasoningsQuery("
-                        INNER JOIN seasoning_pairs sp ON sp.seasoning2 = s.id
-                    WHERE sp.seasoning1 = :i", ["i" => $s->id], false);
+                        INNER JOIN seasoning_relationship sp ON sp.seasoning2 = s.id AND sp.relationship = 0
+                    WHERE sp.seasoning1 = :i
+                    ORDER BY s.name", ["i" => $s->id], false);
                 $s->relatedSpices = $this->SeasoningsQuery("
-                        INNER JOIN seasoning_related sr ON sr.relatedSeasoning = s.id
-                    WHERE sr.seasoning = :i", ["i" => $s->id], false);
+                        INNER JOIN seasoning_relationship sr ON sr.seasoning2 = s.id AND sr.relationship = 2
+                    WHERE sr.seasoning1 = :i
+                    ORDER BY s.name", ["i" => $s->id], false);
+                $relCol1 = $s->type === "blend" ? "seasoning1" : "seasoning2";
+                $relCol2 = $s->type === "blend" ? "seasoning2" : "seasoning1";
+                $s->components = $this->SeasoningsQuery("
+                        INNER JOIN seasoning_relationship sc ON sc.$relCol1 = s.id AND sc.relationship = 1
+                    WHERE sc.$relCol2 = :i
+                    ORDER BY s.name", ["i" => $s->id], false);
             } else {
                 $s->pairsWith = [];
                 $s->relatedSpices = [];
+                $s->components = [];
             }
             $s->recipes = $this->db->GetDataTable("
                 SELECT sr.name, sr.url, 0 AS local
