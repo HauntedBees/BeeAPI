@@ -21,15 +21,17 @@
  * @see https://github.com/HauntedBees/BeeAPI
  */
 class BeeDB {
-	public PDO $pdo;
+	private PDO $pdo;
+    private ?BeeLogger $log = null;
 
-	public function __construct($db) {
+	public function __construct(string $db, bool $debug = false) {
         if($db === "") { return; }
         $ini = parse_ini_file(CONFIG_PATH, true);
         $creds = $ini["db_$db"];
         $this->pdo = new PDO($creds["dsn"], $creds["username"], $creds["password"]);
 		$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        if($debug) { $this->log = new BeeLogger(); }
 	}
 
 	public function BeginTransaction():void { $this->pdo->beginTransaction(); }
@@ -37,21 +39,25 @@ class BeeDB {
     public function RollbackTransaction():void { $this->pdo->rollBack(); }
 
     public function GetDataTable(string $sql, array $params = []):array {
+        $this->TryLog($sql, $params);
         $cmd = $this->pdo->prepare($sql);
         $cmd->execute($params);
         return $cmd->fetchAll();
     }
     public function GetDataRow(string $sql, array $params = []):?array {
+        $this->TryLog($sql, $params);
         $cmd = $this->pdo->prepare($sql);
         $cmd->execute($params);
         $row = $cmd->fetch();
         return ($row === false ? null : $row);
     }
     public function ExecuteNonQuery(string $sql, array $params = []):void {
+        $this->TryLog($sql, $params);
         $cmd = $this->pdo->prepare($sql);
         $cmd->execute($params);
     }
     public function InsertAndReturnID(string $sql, array $params = []):int {
+        $this->TryLog($sql, $params);
         $cmd = $this->pdo->prepare($sql);
         $cmd->execute($params);
         return intval($this->pdo->lastInsertId());
@@ -80,23 +86,27 @@ class BeeDB {
     }
 
 	public function GetObject(string $objClass, string $sql, array $params = []) {
-		$cmd = $this->pdo->prepare($sql);
+		$this->TryLog($sql, $params);
+        $cmd = $this->pdo->prepare($sql);
 		$cmd->execute($params);
         $res = $cmd->fetchObject($objClass);
         return $res === false ? null : $res;
     }
     public function GetObjects(string $objClass, string $sql, array $params = []):array {
-		$cmd = $this->pdo->prepare($sql);
+		$this->TryLog($sql, $params);
+        $cmd = $this->pdo->prepare($sql);
         $cmd->execute($params);
         return $cmd->fetchAll(PDO::FETCH_CLASS, $objClass);
     }
     public function GetString(string $sql, array $params = []):?string {
-		$cmd = $this->pdo->prepare($sql);
+		$this->TryLog($sql, $params);
+        $cmd = $this->pdo->prepare($sql);
         $cmd->execute($params);
         return $cmd->fetch(PDO::FETCH_NUM)[0];
     }
     public function GetStrings(string $sql, array $params = []):array {
-		$cmd = $this->pdo->prepare($sql);
+		$this->TryLog($sql, $params);
+        $cmd = $this->pdo->prepare($sql);
         $cmd->execute($params);
         $res = [];
         while($row = $cmd->fetch(PDO::FETCH_NUM)) {
@@ -105,12 +115,14 @@ class BeeDB {
         return $res;
     }
     public function GetInt(string $sql, array $params = []):int {
-		$cmd = $this->pdo->prepare($sql);
+		$this->TryLog($sql, $params);
+        $cmd = $this->pdo->prepare($sql);
         $cmd->execute($params);
         return intval($cmd->fetch(PDO::FETCH_NUM)[0]);
     }
     public function GetInts(string $sql, array $params = []):array {
-		$cmd = $this->pdo->prepare($sql);
+		$this->TryLog($sql, $params);
+        $cmd = $this->pdo->prepare($sql);
         $cmd->execute($params);
         $res = [];
         while($row = $cmd->fetch(PDO::FETCH_NUM)) {
@@ -119,6 +131,7 @@ class BeeDB {
         return $res;
     }
     public function GetBool(string $sql, array $params = []):bool {
+        $this->TryLog($sql, $params);
 		$cmd = $this->pdo->prepare($sql);
         $cmd->execute($params);
         $res = intval($cmd->fetch(PDO::FETCH_NUM)[0]);
@@ -172,5 +185,11 @@ class BeeDB {
         }
         $sql .= implode(", ", $keyBits).") VALUES (".implode(", ", $valueBits).")";
         return $this->InsertAndReturnID($sql, $params);
-    } 
+    }
+
+    private function TryLog(string $query, array $params):void {
+        if($this->log === null) { return; }
+        $this->log->LogInfo($query);
+        $this->log->LogInfo(json_encode($params));
+    }
 }

@@ -29,7 +29,7 @@ class BeeController {
 	public BeeResponse $response;
     public function __construct(string $db = "", bool $useLogging = false) {
 		$this->response = new BeeResponse();
-		$this->db = new BeeDB($db);
+		$this->db = new BeeDB($db, $useLogging);
 		if($useLogging) { $this->log = new BeeLogger(); }
 	}
 	protected function AssertRequired(string $str) { if(strlen(trim($str)) === 0) { throw new Exception("Required value not provided."); } }
