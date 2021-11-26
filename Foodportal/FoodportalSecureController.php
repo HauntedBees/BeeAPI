@@ -21,7 +21,7 @@
  * @see https://github.com/HauntedBees/BeeAPI
  */
 class FoodportalSecureController extends BeeSecureController {
-    public function __construct() { parent::__construct("portal", BEEROLE_ADMIN); }
+    public function __construct() { parent::__construct("portaladmin", BEEROLE_ADMIN); }
     public function GetAuth() { $this->response->OK(true); }
     
     public function GetJSONExport() {
