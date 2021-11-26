@@ -230,6 +230,51 @@ class FoodportalController extends BeeController {
     public function GetRandomSeasonings() {
         return $this->response->OK($this->SeasoningsQuery("ORDER BY RAND() LIMIT 10", [], false, false));
     }
+    /** @return Seasoning[] */
+    public function GetSeasoningSearchResults(array $queryParts) {
+        $whereStr = [];
+        $whereParams = [];
+        foreach($queryParts as $idx => $q) {
+            if(strpos($q, ":") === false) {
+                $whereStr[] = "(s.name LIKE :q$idx OR syn.synonym LIKE :q$idx)";
+                $whereParams["q$idx"] = "%$q%";
+            } else {
+                $qsplit = explode(":", $q);
+                $type = $qsplit[0];
+                $param = $qsplit[1];
+                switch($type) {
+                    case "origin":
+                        $whereStr[] = "s.origin = :q$idx";
+                        $whereParams["q$idx"] = $param;
+                        break;
+                    case "flavor":
+                        $whereStr[] = "f.name = :q$idx";
+                        $whereParams["q$idx"] = $param;
+                        break;
+                    case "dish":
+                        $whereStr[] = "d.name = :q$idx";
+                        $whereParams["q$idx"] = $param;
+                        break;
+                    case "with":
+                        $whereStr[] = "i.name = :q$idx";
+                        $whereParams["q$idx"] = $param;
+                        break;
+                }
+            }
+        }
+        if(count($whereStr) === 0) { return $this->response->Error("Please specify a search query."); }
+        $seasonings = $this->SeasoningsQuery("
+                INNER JOIN seasoning_dish sd ON s.id = sd.seasoning
+                INNER JOIN dish d ON sd.dish = d.id
+                INNER JOIN seasoning_flavor sf ON s.id = sf.seasoning
+                INNER JOIN flavor f ON sf.flavor = f.id
+                INNER JOIN seasoning_ingredient si ON s.id = si.seasoning
+                INNER JOIN ingredient i ON si.ingredient = i.id
+                LEFT JOIN seasoning_synonym syn ON s.id = syn.seasoning
+            WHERE ".implode(" AND ", $whereStr)."
+            ORDER BY s.name ASC", $whereParams);
+        return $this->response->OK($seasonings);
+    }
     private function SeasoningsQuery(string $whereClause, array $whereParams, bool $includeLinks = true, bool $cache = true) {
         $key = ($includeLinks?"full_":"partial_")."seasoning_".preg_replace("/[\W]/", "", $whereClause);
         foreach($whereParams as $k=>$v) { $key .= "_$k_$v"; }
@@ -238,16 +283,16 @@ class FoodportalController extends BeeController {
             if($cachedVal !== null) { return $cachedVal; }
         }
         $seasonings = $this->db->GetObjects("Seasoning", "
-        SELECT s.id, s.name, s.origin, s.description, s.emoji,
-            CASE
-                WHEN s.type = 0 THEN 'herb'
-                WHEN s.type = 1 THEN 'spice'
-                WHEN s.type = 2 THEN 'blend'
-            END AS type, s.species, s.imagedesc, s.imagename, s.imageauthor, s.imageurl, s.authorurl,
-            l.code AS license, l.url AS licenseurl
-        FROM seasoning s
-            INNER JOIN license l ON s.license = l.id
-        $whereClause", $whereParams);
+            SELECT DISTINCT s.id, s.name, s.origin, s.description, s.emoji,
+                CASE
+                    WHEN s.type = 0 THEN 'herb'
+                    WHEN s.type = 1 THEN 'spice'
+                    WHEN s.type = 2 THEN 'blend'
+                END AS type, s.species, s.imagedesc, s.imagename, s.imageauthor, s.imageurl, s.authorurl,
+                l.code AS license, l.url AS licenseurl
+            FROM seasoning s
+                INNER JOIN license l ON s.license = l.id
+            $whereClause", $whereParams);
         foreach($seasonings as $s) {
             $s->synonyms = $this->db->GetStrings("SELECT synonym FROM seasoning_synonym WHERE seasoning = :i", ["i" => $s->id]);
             $s->dishes = $this->db->GetStrings("
