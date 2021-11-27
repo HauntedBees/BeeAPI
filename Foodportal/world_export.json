@@ -16,7 +16,7 @@
         "musicURL": "http:\/\/abkhazworld.com\/aw\/multimedia\/music",
         "languages": "Abkhaz, Russian",
         "realFirstLetter": null,
-        "focusArea": "GE",
+        "focusArea": null,
         "neighbors": [{
                 "id": 203,
                 "countryCode": "GE",
@@ -1156,7 +1156,7 @@
         "musicURL": "https:\/\/en.wikipedia.org\/wiki\/Music_of_Artsakh",
         "languages": "Armenian",
         "realFirstLetter": null,
-        "focusArea": "AZ",
+        "focusArea": null,
         "neighbors": [{
                 "id": 145,
                 "countryCode": "AM",
@@ -1872,7 +1872,7 @@
         "musicURL": "https:\/\/en.wikipedia.org\/wiki\/Music_of_Bahrain",
         "languages": "Arabic",
         "realFirstLetter": null,
-        "focusArea": "QA",
+        "focusArea": null,
         "neighbors": [{
                 "id": 82,
                 "countryCode": "None",
@@ -6046,7 +6046,7 @@
         "musicURL": "https:\/\/en.wikipedia.org\/wiki\/Music_of_the_Cook_Islands",
         "languages": "English, Cook Islands M\u0101ori",
         "realFirstLetter": null,
-        "focusArea": "FJ",
+        "focusArea": null,
         "neighbors": [{
                 "id": 82,
                 "countryCode": "None",

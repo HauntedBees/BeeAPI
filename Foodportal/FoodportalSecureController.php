@@ -24,12 +24,17 @@ class FoodportalSecureController extends BeeSecureController {
     public function __construct() { parent::__construct("portaladmin", BEEROLE_ADMIN); }
     public function GetAuth() { $this->response->OK(true); }
     
-    public function GetJSONExport() {
+    public function GetWorldJSONExport() {
         $codes = $this->db->GetStrings("SELECT ckey FROM country ORDER BY id ASC");
         $res = [];
         foreach($codes as $code) {
             $res[$code] = $this->GetCountryInner($code);
         }
+        return $this->response->OK($res);
+    }
+    public function GetSpiceJSONExport() {
+        $sureWhyNot = new FoodportalController();
+        $res = $sureWhyNot->SeasoningsQuery("ORDER BY name ASC", []);
         return $this->response->OK($res);
     }
 

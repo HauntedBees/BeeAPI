@@ -275,7 +275,7 @@ class FoodportalController extends BeeController {
             ORDER BY s.name ASC", $whereParams);
         return $this->response->OK($seasonings);
     }
-    private function SeasoningsQuery(string $whereClause, array $whereParams, bool $includeLinks = true, bool $cache = true) {
+    public function SeasoningsQuery(string $whereClause, array $whereParams, bool $includeLinks = true, bool $cache = true) {
         $key = ($includeLinks?"full_":"partial_")."seasoning_".preg_replace("/[\W]/", "", $whereClause);
         foreach($whereParams as $k=>$v) { $key .= "_$k_$v"; }
         if($cache) {

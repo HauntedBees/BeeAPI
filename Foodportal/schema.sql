@@ -39,12 +39,24 @@ CREATE TABLE diet (
 CREATE TABLE dish (
   id bigint(20) NOT NULL,
   name varchar(50) NOT NULL,
-  emoji varchar(6) NOT NULL
+  emoji varchar(6) NOT NULL,
+  spiceOnly bit(1) DEFAULT b'0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE flavor (
+  id bigint(20) NOT NULL,
+  name varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE ingredient (
   id bigint(20) NOT NULL,
   name varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE license (
+  id bigint(20) NOT NULL,
+  code varchar(20) NOT NULL,
+  url varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE recipe (
@@ -70,6 +82,55 @@ CREATE TABLE recipe_diet (
 CREATE TABLE recipe_ingredient (
   recipe bigint(20) NOT NULL,
   ingredient bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE seasoning (
+  id bigint(20) NOT NULL,
+  name varchar(50) NOT NULL,
+  origin varchar(100) NOT NULL,
+  description text NOT NULL,
+  emoji varchar(8) NOT NULL,
+  type int(11) NOT NULL,
+  species varchar(100) NOT NULL,
+  imagedesc varchar(200) NOT NULL,
+  imagename varchar(200) NOT NULL,
+  imageauthor varchar(200) NOT NULL,
+  imageurl varchar(500) NOT NULL,
+  authorurl varchar(500) NOT NULL,
+  license bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE seasoning_dish (
+  seasoning bigint(20) NOT NULL,
+  dish bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE seasoning_flavor (
+  seasoning bigint(20) NOT NULL,
+  flavor bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE seasoning_ingredient (
+  seasoning bigint(20) NOT NULL,
+  ingredient bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE seasoning_recipe (
+  id bigint(20) NOT NULL,
+  seasoning bigint(20) NOT NULL,
+  name varchar(100) NOT NULL,
+  url varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE seasoning_relationship (
+  seasoning1 bigint(20) NOT NULL,
+  seasoning2 bigint(20) NOT NULL,
+  relationship int(11) NOT NULL COMMENT '0 = pairs with\r\n1 = component of\r\n2 = related to'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE seasoning_synonym (
+  seasoning bigint(20) NOT NULL,
+  synonym varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE shell_country (
@@ -105,9 +166,18 @@ ALTER TABLE dish
   ADD PRIMARY KEY (id),
   ADD KEY name (name);
 
+ALTER TABLE flavor
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY id (id),
+  ADD UNIQUE KEY name (name);
+
 ALTER TABLE ingredient
   ADD PRIMARY KEY (id),
   ADD UNIQUE KEY name (name);
+
+ALTER TABLE license
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY code (code);
 
 ALTER TABLE recipe
   ADD PRIMARY KEY (id),
@@ -121,6 +191,35 @@ ALTER TABLE recipe_diet
 ALTER TABLE recipe_ingredient
   ADD KEY recipe (recipe),
   ADD KEY ingredient (ingredient);
+
+ALTER TABLE seasoning
+  ADD PRIMARY KEY (id),
+  ADD KEY license (license);
+
+ALTER TABLE seasoning_dish
+  ADD KEY seasoning (seasoning),
+  ADD KEY dish (dish);
+
+ALTER TABLE seasoning_flavor
+  ADD KEY flavor (flavor),
+  ADD KEY seasoning (seasoning);
+
+ALTER TABLE seasoning_ingredient
+  ADD KEY seasoning (seasoning),
+  ADD KEY ingredient (ingredient);
+
+ALTER TABLE seasoning_recipe
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY id (id),
+  ADD KEY seasoning (seasoning);
+
+ALTER TABLE seasoning_relationship
+  ADD KEY seasoning1 (seasoning1),
+  ADD KEY seasoning2 (seasoning2);
+
+ALTER TABLE seasoning_synonym
+  ADD UNIQUE KEY synonym (synonym),
+  ADD KEY seasoning (seasoning);
 
 ALTER TABLE shell_country
   ADD PRIMARY KEY (id);
@@ -139,10 +238,22 @@ ALTER TABLE diet
 ALTER TABLE dish
   MODIFY id bigint(20) NOT NULL AUTO_INCREMENT;
 
+ALTER TABLE flavor
+  MODIFY id bigint(20) NOT NULL AUTO_INCREMENT;
+
 ALTER TABLE ingredient
   MODIFY id bigint(20) NOT NULL AUTO_INCREMENT;
 
+ALTER TABLE license
+  MODIFY id bigint(20) NOT NULL AUTO_INCREMENT;
+
 ALTER TABLE recipe
+  MODIFY id bigint(20) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE seasoning
+  MODIFY id bigint(20) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE seasoning_recipe
   MODIFY id bigint(20) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE shell_country
@@ -168,6 +279,31 @@ ALTER TABLE recipe_diet
 ALTER TABLE recipe_ingredient
   ADD CONSTRAINT recipe_ingredient_ibfk_1 FOREIGN KEY (recipe) REFERENCES recipe (id),
   ADD CONSTRAINT recipe_ingredient_ibfk_2 FOREIGN KEY (ingredient) REFERENCES ingredient (id);
+
+ALTER TABLE seasoning
+  ADD CONSTRAINT seasoning_ibfk_1 FOREIGN KEY (license) REFERENCES license (id);
+
+ALTER TABLE seasoning_dish
+  ADD CONSTRAINT seasoning_dish_ibfk_1 FOREIGN KEY (seasoning) REFERENCES seasoning (id),
+  ADD CONSTRAINT seasoning_dish_ibfk_2 FOREIGN KEY (dish) REFERENCES dish (id);
+
+ALTER TABLE seasoning_flavor
+  ADD CONSTRAINT seasoning_flavor_ibfk_1 FOREIGN KEY (flavor) REFERENCES flavor (id),
+  ADD CONSTRAINT seasoning_flavor_ibfk_2 FOREIGN KEY (seasoning) REFERENCES seasoning (id);
+
+ALTER TABLE seasoning_ingredient
+  ADD CONSTRAINT seasoning_ingredient_ibfk_1 FOREIGN KEY (seasoning) REFERENCES seasoning (id),
+  ADD CONSTRAINT seasoning_ingredient_ibfk_2 FOREIGN KEY (ingredient) REFERENCES ingredient (id);
+
+ALTER TABLE seasoning_recipe
+  ADD CONSTRAINT seasoning_recipe_ibfk_1 FOREIGN KEY (seasoning) REFERENCES seasoning (id);
+
+ALTER TABLE seasoning_relationship
+  ADD CONSTRAINT seasoning_relationship_ibfk_1 FOREIGN KEY (seasoning1) REFERENCES seasoning (id),
+  ADD CONSTRAINT seasoning_relationship_ibfk_2 FOREIGN KEY (seasoning2) REFERENCES seasoning (id);
+
+ALTER TABLE seasoning_synonym
+  ADD CONSTRAINT seasoning_synonym_ibfk_1 FOREIGN KEY (seasoning) REFERENCES seasoning (id);
 
 ALTER TABLE song
   ADD CONSTRAINT song_ibfk_1 FOREIGN KEY (country) REFERENCES country (id);
