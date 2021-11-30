@@ -209,7 +209,7 @@ class FoodportalController extends BeeController {
     /** @return SongInfo[] */
     private function GetSongs(string $whereClause, array $params = [], string $orderBy = "") {
         return $this->db->GetObjects("SongInfo", "
-            SELECT c.ckey AS countryCode, s.name, s.url, s.favorite, s.translation
+            SELECT c.ckey AS countryCode, c.name AS countryName, s.name, s.url, s.favorite, s.translation
             FROM song s
                 INNER JOIN country c ON s.country = c.id
             $whereClause
@@ -277,7 +277,7 @@ class FoodportalController extends BeeController {
     }
     public function SeasoningsQuery(string $whereClause, array $whereParams, bool $includeLinks = true, bool $cache = true) {
         $key = ($includeLinks?"full_":"partial_")."seasoning_".preg_replace("/[\W]/", "", $whereClause);
-        foreach($whereParams as $k=>$v) { $key .= "_$k_$v"; }
+        foreach($whereParams as $k=>$v) { $key .= "_".$k."_".$v; }
         if($cache) {
             $cachedVal = $this->cache->GetValue($key);
             if($cachedVal !== null) { return $cachedVal; }

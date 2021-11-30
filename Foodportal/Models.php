@@ -76,6 +76,7 @@ class Recipe {
 }
 class SongInfo {
     public string $countryCode;
+    public string $countryName;
     public string $name;
     public string $url;
     public bool $favorite;
