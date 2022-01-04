@@ -156,6 +156,7 @@ class FoodportalSecureController extends BeeSecureController {
                         $paths = $ini["filepaths"];
                         $filepath = $paths["worldfoodimagepath"].$newFileName.".jpg";
                         $filewriter = fopen($filepath, "x");
+                        if($filewriter === false) { return $this->response->Error("Could not open filepath at: ".realpath($paths["worldfoodimagepath"])); }
                         fwrite($filewriter, $imageFile);
                         fclose($filewriter);
                         $food["img"] = $newFileName.".jpg";
