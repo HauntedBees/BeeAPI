@@ -25,7 +25,7 @@ class GeneralController extends BeeController {
         $searchKey = str_replace(".json", "", $searchKey);
         $json = @file_get_contents("./General/world.json", false);
         $recipeList = json_decode($json, true);
-        if(strpos($searchKey, "|") !== false) { // individual recipe
+        if(str_contains($searchKey, "|")) { // individual recipe
             $recipe = $recipeList[$searchKey];
             if(is_null($recipe)) {
                 echo "";
@@ -35,7 +35,7 @@ class GeneralController extends BeeController {
         } else { // multiple recipes
             $response = [];
             foreach($recipeList as $k => $v) {
-                if(strpos($k, $searchKey) === 0) {
+                if(str_starts_with($k, $searchKey)) {
                     $response[] = $v;
                 }
             }

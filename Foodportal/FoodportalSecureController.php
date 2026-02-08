@@ -49,7 +49,7 @@ class FoodportalSecureController extends BeeSecureController {
         $country = $this->db->GetObject("Country", "
             SELECT
                 id, ckey, name, description, population, popEstimate, area, independence, indFrom, demonym, currency, motto, 
-                languages, foodURL, musicURL, realFirstLetter, focusArea, notes
+                languages, foodURL, musicURL, realFirstLetter, focusArea, notes, active
             FROM country
             WHERE ckey = :ckey", ["ckey" => $countryCode]);
         if($country == null) { return $this->response->Error("Country not found."); }
@@ -106,7 +106,7 @@ class FoodportalSecureController extends BeeSecureController {
                 // convert shell to not shell
                 $shell = $this->db->GetInt("SELECT id FROM shell_country WHERE countryCode = :cc", ["cc" => $country->ckey]);
                 if($shell > 0) {
-                    $this->db->ExecuteNonQuery("UPDATE country_neighbor SET neighbor = :n WHERE shell = :s", ["n" => $country->id, "s" => $shell]);
+                    $this->db->ExecuteNonQuery("UPDATE country_neighbor SET shell = NULL, neighbor = :n WHERE shell = :s", ["n" => $country->id, "s" => $shell]);
                     $this->db->ExecuteNonQuery("DELETE FROM shell_country WHERE id = :id", ["id" => $shell]);
                 }
             } else {
@@ -179,7 +179,7 @@ class FoodportalSecureController extends BeeSecureController {
                     }
                     foreach($food["ingredients"] as $ingredient) {
                         $ingredient = trim($ingredient);
-                        $ingredientId = $ingredientXref[$ingredient];
+                        $ingredientId = array_key_exists($ingredient, $ingredientXref) ? $ingredientXref[$ingredient] : null;
                         if($ingredientId === null) {
                             $ingredientId = $this->db->GetInt("SELECT id FROM ingredient WHERE name = :n", ["n" => $ingredient]);
                             if($ingredientId === 0) {

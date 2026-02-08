@@ -69,7 +69,7 @@ try {
         $isObject = is_array($arg) && count($arg) > 0 && array_keys($arg) !== range(0, count($arg) - 1);
         if($isObject) {
             $param = new ReflectionParameter([$controllerName, $methodName], $idx);
-            $paramClassName = $param->getClass()->name;
+            $paramClassName = @$param->getClass()->name;
             $arg = AssArrayToObject($paramClassName, $arg);
         }
     }

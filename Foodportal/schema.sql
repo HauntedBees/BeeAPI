@@ -5056,3 +5056,6 @@ ALTER TABLE seasoning_synonym
 
 ALTER TABLE song
   ADD CONSTRAINT song_ibfk_1 FOREIGN KEY (country) REFERENCES country (id);
+
+ALTER TABLE country
+  ADD COLUMN active BIT(1) NOT NULL DEFAULT 1; 

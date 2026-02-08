@@ -23,8 +23,8 @@
 const CACHE_PATH = "../../protected/beecache/";
 class BeeCache {
 	private int $duration = 60;
-	private ?BeeDB $db = null;
-	function __construct(int $cacheMinutes = 60, BeeDB $db = null) {
+	private BeeDB | null $db = null;
+	function __construct(int $cacheMinutes = 60, BeeDB | null $db = null) {
 		$this->duration = $cacheMinutes;
 		$this->db = $db;
 	}

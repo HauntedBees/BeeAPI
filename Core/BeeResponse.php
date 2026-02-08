@@ -22,8 +22,9 @@
  */
 class BeeResponse {
 	public bool $addSessionExpiredMessage = false;
+	public array $extra = [];
 	public function __construct() {
-		$origin = $_SERVER["HTTP_ORIGIN"];
+		$origin = isset($_SERVER["HTTP_ORIGIN"]) ? $_SERVER["HTTP_ORIGIN"] : "*";
 		header("Access-Control-Allow-Origin: $origin");
 		header("Access-Control-Allow-Credentials: true");
 		header("Access-Control-Allow-Headers: Authorization");
@@ -31,6 +32,9 @@ class BeeResponse {
 		header("Content-Type: application/json");
     }
     private function Response($data):void {
+		if(!empty($this->extra)) {
+			$data["extra"] = $this->extra;
+		}
 		if($this->addSessionExpiredMessage) { 
 			$data["sessionexpired"] = true;
 		}

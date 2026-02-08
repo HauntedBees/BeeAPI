@@ -25,6 +25,7 @@ class NamedEmoji {
     public int $id;
     public string $name;
     public string $emoji;
+    public string $color;
 }
 class IdNamePair {
     public int $id;
@@ -43,20 +44,21 @@ class Country {
     public int $population;
     public int $popEstimate;
     public int $area;
-    public ?string $independence;
-    public ?string $indFrom;
+    public ?string $independence = null;
+    public ?string $indFrom = null;
     public string $demonym;
     public string $currency;
-    public ?string $motto;
+    public ?string $motto = null;
     public string $foodURL;
     public string $musicURL;
     public string $languages;
-    public ?string $realFirstLetter;
-    public ?string $focusArea;
+    public ?string $realFirstLetter = null;
+    public ?string $focusArea = null;
     public array $neighbors; // CountryNeighbor[]
     public array $food; // Recipe[]
     public array $music; // SongInfo[]
-    public ?string $notes;
+    public ?string $notes = null;
+    public bool $active;
 }
 class Recipe {
     public int $id;
@@ -73,6 +75,7 @@ class Recipe {
     public array $diet; // DietInfo[]
     public array $ingredients; // string[]
     public ?string $databee;
+    public array $songs; // SongInfo[]
 }
 class SongInfo {
     public string $countryCode;
