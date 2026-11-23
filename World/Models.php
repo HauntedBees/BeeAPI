@@ -21,6 +21,9 @@
  * @see https://github.com/HauntedBees/BeeAPI
  */
 #region "Areund the World"
+class UpdateNoteRequest extends RawBeeModel {
+    public int $countryId;
+}
 class NamedEmoji {
     public int $id;
     public string $name;
@@ -61,6 +64,10 @@ class Country extends BeeModel {
      #[NotMapped]
     public array $music; // SongInfo[]
     public ?string $notes;
+    public ?string $asOfNotes;
+    public ?string $asOfDate;
+    #[NotMapped]
+    public ?bool $asOfNotesChanged;
     public bool $active;
     public function IncludesModifiedColumn(): bool { return false; }
 }

@@ -36,6 +36,23 @@ class AdminController extends BeeSecureController {
         return $res;
     }
 
+
+    #[Get("asOfNotes")]
+    public function GetAsOfNotes(): array {
+        return $this->db->GetObjects("Country", "
+            SELECT id, name, asOfNotes, asOfDate
+            FROM country
+            WHERE asOfNotes IS NOT NULL
+                AND TRIM(asOfNotes) <> ''
+        ");
+    }
+
+    #[Post("validateInfo")]
+    public function ValidateAsOfNotes(UpdateNoteRequest $req): bool {
+        $this->db->ExecuteNonQuery("UPDATE country SET asofDate = CURDATE() WHERE id = :id", ["id" => $req->countryId]);
+        return true;
+    }
+
     #[Get("diets")]
     public function GetDiets(): array { return $this->db->GetObjects("IdNamePair", "SELECT id, name FROM diet ORDER BY name ASC"); }
     #[Get("dishes")]
@@ -47,7 +64,7 @@ class AdminController extends BeeSecureController {
         $country = $this->db->GetObject("Country", "
             SELECT
                 id, ckey, name, description, population, popEstimate, area, independence, indFrom, demonym, currency, motto, 
-                languages, foodURL, musicURL, realFirstLetter, focusArea, notes, active
+                languages, foodURL, musicURL, realFirstLetter, focusArea, notes, active, asOfNotes
             FROM country
             WHERE ckey = :ckey", ["ckey" => $countryCode]);
         if($country == null) { return $this->response->Error("Country not found."); }
@@ -108,6 +125,9 @@ class AdminController extends BeeSecureController {
                 }
             } else {
                 $this->db->PostBeeModel($country);
+                if($country->asOfNotesChanged) {
+                    $this->db->ExecuteNonQuery("UPDATE country SET asofDate = CURDATE() WHERE id = :id", ["id" => $country->id]);
+                }
                 $this->db->ExecuteNonQuery("DELETE FROM country_neighbor WHERE country = :id", ["id" => $country->id]);
                 $this->db->ExecuteNonQuery("DELETE FROM song WHERE country = :id", ["id" => $country->id]);
             }
