@@ -119,7 +119,7 @@ class BeeDB {
         return array_map(function ($p) { return $p->getName(); }, $props);
     }
 
-    public function PostBeeModel(BeeModel $obj): int {
+    public function PostBeeModel(BeeModel $obj, bool $includeCreatedAndModified = true): int {
         $reflection = new ReflectionClass($obj::class);
         $tableName = $this->GetTableName($reflection);
         if($obj instanceof AuthBeeModel && $obj->id !== 0) {
@@ -137,13 +137,13 @@ class BeeDB {
         //$propNames = array_map(function (ReflectionProperty $p) { return $p->getName() }, $props);
         if(isset($obj->id) && $obj->id !== 0) {
             $id = $obj->id;
-            $this->BeeModelUpdate($tableName, $obj, $props);
+            $this->BeeModelUpdate($tableName, $obj, $props, $includeCreatedAndModified);
         } else {
-            $id = $this->BeeModelInsert($tableName, $obj, $props);
+            $id = $this->BeeModelInsert($tableName, $obj, $props, $includeCreatedAndModified);
         }
         return $id;
     }
-    private function BeeModelUpdate(string $tableName, BeeModel $obj, array $properties): void {
+    private function BeeModelUpdate(string $tableName, BeeModel $obj, array $properties, bool $includeCreatedAndModified): void {
         $sql = "UPDATE $tableName SET ";
         $bits = [];
         $params = [];
@@ -163,14 +163,14 @@ class BeeDB {
                 $bits[] = "$columnName = null";
             }
         }
-        if($obj->IncludesModifiedColumn()) {
+        if($obj->IncludesModifiedColumn() && $includeCreatedAndModified) {
             $bits[] = "modified = :modified";
             $params["modified"] = gmdate("Y-m-d H:i:s");
         }
         $sql .= implode(", ", $bits)." WHERE id = ".$obj->id;
         $this->ExecuteNonQuery($sql, $params);
     }
-    private function BeeModelInsert(string $tableName, BeeModel $obj, array $properties): int { // ReflectionProperty
+    private function BeeModelInsert(string $tableName, BeeModel $obj, array $properties, bool $includeCreatedAndModified): int { // ReflectionProperty
         $sql = "INSERT INTO $tableName (";
         $keyBits = [];
         $valueBits = [];
@@ -192,11 +192,13 @@ class BeeDB {
                 $params[$columnName] = is_string($value) ? trim($value) : $value;
             }
         }
-        $keyBits[] = "created";
-        $keyBits[] = "modified";
-        $valueBits[] = ":nowdate";
-        $valueBits[] = ":nowdate";
-        $params["nowdate"] = gmdate("Y-m-d H:i:s");
+        if($includeCreatedAndModified) {
+            $keyBits[] = "created";
+            $keyBits[] = "modified";
+            $valueBits[] = ":nowdate";
+            $valueBits[] = ":nowdate";
+            $params["nowdate"] = gmdate("Y-m-d H:i:s");
+        }
         $sql .= implode(", ", $keyBits).") VALUES (".implode(", ", $valueBits).")";
         return $this->InsertAndReturnID($sql, $params);
     }

@@ -184,9 +184,9 @@ class AdminController extends BeeSecureController {
                     $foodAsObj->MapFromJSON($food);
                     if($food["id"] === 0) {
                         $foodAsObj->country = $country->id;
-                        $this->db->PostBeeModel($foodAsObj);
+                        $food["id"] = $this->db->PostBeeModel($foodAsObj, false);
                     } else {
-                        $this->db->PostBeeModel($foodAsObj);
+                        $this->db->PostBeeModel($foodAsObj, false);
                         $this->db->ExecuteNonQuery("DELETE FROM recipe_diet WHERE recipe = :id", ["id" => $food["id"]]);
                         $this->db->ExecuteNonQuery("DELETE FROM recipe_ingredient WHERE recipe = :id", ["id" => $food["id"]]);
                     }

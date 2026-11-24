@@ -120,6 +120,7 @@ class AdminCountryNeighbor {
 #[TableName("recipe")]
 class AdminRecipe extends BeeModel {
     public int $id;
+    public int $country;
     public string $name;
     public int $dish;
     public string $url;
