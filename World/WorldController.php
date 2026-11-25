@@ -43,12 +43,12 @@ class WorldController extends BeeController {
                 SELECT DISTINCT LEFT(IFNULL(realFirstLetter, name), 1)
                 FROM country
                 WHERE active = 1
-                ORDER BY IFNULL(realFirstLetter, name) ASC"),
+                ORDER BY LEFT(IFNULL(realFirstLetter, name), 1) ASC"),
             "countries" => $this->db->GetDataTable("
                 SELECT ckey, name, LEFT(IFNULL(realFirstLetter, name), 1) AS firstLetter, focusArea
                 FROM country
                 WHERE active = 1
-                ORDER BY IFNULL(realFirstLetter, name) ASC"),
+                ORDER BY LEFT(IFNULL(realFirstLetter, name), 1) ASC"),
             "diets" => $this->db->GetObjects("NamedEmoji", "
                 SELECT id, name, emoji, color
                 FROM diet
