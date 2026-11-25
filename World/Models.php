@@ -111,6 +111,10 @@ class CountryNeighbor {
     public ?string $realCountryName;
     public ?string $shellCountryName;
 }
+class LinkScanRecord {
+    public string $name;
+    public string $url;
+}
 class AdminCountryNeighbor {
     public int $id;
     public string $countryCode;

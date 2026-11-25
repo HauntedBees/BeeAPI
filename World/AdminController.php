@@ -36,6 +36,48 @@ class AdminController extends BeeSecureController {
         return $res;
     }
 
+    #[Get("deadLinks")]
+    public function GetDeadLinks(): array {
+        $links = $this->db->GetObjects("LinkScanRecord", "
+            SELECT CONCAT(c.name, ' (Song): ', s.name) AS name,  s.url
+            FROM song s
+                INNER JOIN country c ON s.country = c.id
+            UNION
+            SELECT CONCAT(c.name, ' (Recipe): ', r.name) AS name, r.url
+            FROM recipe r
+                INNER JOIN country c ON r.country  = c.id");
+        $invalidLinks = [];
+        foreach($links as $link) {
+            if(!$this->IsLinkValid($link->url)) {
+                $invalidLinks[] = $link;
+            }
+        }
+        return $invalidLinks;
+    }
+    private function IsLinkValid(string $url): bool {
+        if(str_contains($url, "youtube.com")) {
+            $ytUrl = "http://www.youtube.com/oembed?url=$url&format=json";
+            $headers = get_headers($ytUrl);
+            return substr($headers[0], 9, 3) !== "404";
+        }
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_HEADER, true);
+        curl_setopt($ch, CURLOPT_NOBODY, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_MAXREDIRS, 5);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (X11; Linux x86_64; rv:160.0) Gecko/20100101 Firefox/160.0");
+        curl_exec($ch);
+        if(curl_errno($ch)) {
+            curl_close($ch);
+            return false;
+        }
+        $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return ($code >= 200 && $code <= 403) || $code == 429;
+    }
 
     #[Get("asOfNotes")]
     public function GetAsOfNotes(): array {
