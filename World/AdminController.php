@@ -186,18 +186,6 @@ class AdminController extends BeeSecureController {
                 $this->db->ExecuteNonQuery("INSERT INTO country_neighbor (country, neighbor, shell) VALUES ".implode(", ", $groupSQL));
             }
     
-            if(count($country->music) > 0) {
-                $groupSQL = [];
-                $groupParams = ["c" => $country->id];
-                foreach($country->music as $i=>$song) {
-                    $groupSQL[] = "(:c, :r$i, :n$i, :u$i, ".($song["favorite"]?1:0).", :t$i)";
-                    $groupParams["r$i"] = $song["recipe"];
-                    $groupParams["n$i"] = trim($song["name"]);
-                    $groupParams["u$i"] = trim($song["url"]);
-                    $groupParams["t$i"] = is_string($song["translation"]) ? trim($song["translation"]) : $song["translation"];
-                }
-                $this->db->ExecuteNonQuery("INSERT INTO song (country, recipe, name, url, favorite, translation) VALUES ".implode(", ", $groupSQL), $groupParams);
-            }
             if(count($country->food) > 0) {
                 $dietSQL = [];
                 $dietParams = [];
@@ -205,27 +193,29 @@ class AdminController extends BeeSecureController {
                 $ingredientXref = [];
                 $idx = 0; 
                 foreach($country->food as $food) {
+                    $cleanFoodName = $this->GetAsciiName($food["name"]);
                     if(substr($food["img"], 0, 23) === "data:image/jpeg;base64,") {
-                        $newFileName = strtolower($country->ckey."_".preg_replace("/[^A-Za-z_]/", "", preg_replace("/\s/", "_", $food["name"])));
+                        $newFileName = strtolower($country->ckey."_".$cleanFoodName);
                         $base64data = explode(",", $food["img"])[1];
                         $imageFile = base64_decode($base64data, true);
-                        if($imageFile === false) { return $this->response->Error("Invalid base 64 image file."); }
+                        if($imageFile === false) { throw new BeeException("Invalid base 64 image file."); }
         
                         $ini = parse_ini_file(CONFIG_PATH, true);
                         $paths = $ini["filepaths"];
                         $filepath = $paths["worldfoodimagepath"].$newFileName.".jpg";
-                        $filewriter = fopen($filepath, "x");
-                        if($filewriter === false) { return $this->response->Error("Could not open filepath at: ".realpath($paths["worldfoodimagepath"])); }
+                        $filewriter = fopen($filepath, "w");
+                        if($filewriter === false) { throw new BeeException("Could not open filepath at: ".realpath($paths["worldfoodimagepath"])); }
                         fwrite($filewriter, $imageFile);
                         fclose($filewriter);
                         $food["img"] = $newFileName.".jpg";
-                    } else if(substr($food["img"], 0, 5) === "data:image") {
-                        return $this->response->Error("JPEGs only!");
+                    } else if(substr($food["img"], 0, 5) === "data:") {
+                        throw new BeeException("JPEGs only!");
                     }
                     $foodAsObj = new AdminRecipe();
                     $foodAsObj->MapFromJSON($food);
+                    $foodAsObj->country = $country->id;
                     if($food["id"] === 0) {
-                        $foodAsObj->country = $country->id;
+                        $foodAsObj->urlkey = $cleanFoodName;
                         $food["id"] = $this->db->PostBeeModel($foodAsObj, false);
                     } else {
                         $this->db->PostBeeModel($foodAsObj, false);
@@ -258,6 +248,18 @@ class AdminController extends BeeSecureController {
                     $this->db->ExecuteNonQuery("INSERT INTO recipe_ingredient (recipe, ingredient) VALUES ".implode(", ", $ingSQL));
                 }
             }
+            if(count($country->music) > 0) {
+                $groupSQL = [];
+                $groupParams = ["c" => $country->id];
+                foreach($country->music as $i=>$song) {
+                    $groupSQL[] = "(:c, :r$i, :n$i, :u$i, ".($song["favorite"]?1:0).", :t$i)";
+                    $groupParams["r$i"] = $song["recipe"];
+                    $groupParams["n$i"] = trim($song["name"]);
+                    $groupParams["u$i"] = trim($song["url"]);
+                    $groupParams["t$i"] = is_string($song["translation"]) ? trim($song["translation"]) : $song["translation"];
+                }
+                $this->db->ExecuteNonQuery("INSERT INTO song (country, recipe, name, url, favorite, translation) VALUES ".implode(", ", $groupSQL), $groupParams);
+            }
             $this->db->CommitTransaction();
             $updatedRss = $this->GenerateXML();
             return [
@@ -288,6 +290,10 @@ class AdminController extends BeeSecureController {
     public function GetFeedTest(): string {
         $this->GenerateXML();
         return __DIR__;
+    }
+
+    private function GetAsciiName(string $name): string {
+        return strtolower(preg_replace("/[^A-Za-z_]/", "", preg_replace("/\s/", "_", $name)));
     }
 
     private function GenerateXML(): bool {
